@@ -536,7 +536,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-05-18 10:58:27" itemprop="dateModified" datetime="2023-05-18T10:58:27+08:00">2023-05-18</time>
+                <time title="修改时间：2023-05-18 11:12:50" itemprop="dateModified" datetime="2023-05-18T11:12:50+08:00">2023-05-18</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -566,11 +566,36 @@
           <p>使用C++语言实现简单的线性表结构<br>值得一提的是，C++还有几种别的数据容器，比如map，vector等，这里也将一并介绍，与C语言重合度过高的地方我会将其简化，有明显差异的地方则会突出  </p>
 <ul>
 <li><h1 id="数组（插值，删除，改值，查值，遍历等）"><a href="#数组（插值，删除，改值，查值，遍历等）" class="headerlink" title="数组（插值，删除，改值，查值，遍历等）"></a>数组（插值，删除，改值，查值，遍历等）</h1><ul>
-<li>C++中的数组定义同C一样容易理解，下面是一种常规的数组定义办法<br>  int num[10];</li>
-<li>虽然C语言的malloc类语句仍然可以使用，但是C++也拥有自己的特性，即用new来实现分配内存。<em>同C语言类似，这种办法分配的内存需要使用delete进行释放。</em><br>  int *num &#x3D; new int[10];<br>  delete []num;</li>
-<li>除此之外，C++还提供了两个容器，一个是array，一个是vector，要使用它们，需要引用头文件，并使用命名空间std。<br>  #include <array><br>  #include <vector><br>  using namespace std;</li>
-<li>下面是他们的初始化<br>  array1 &lt;int, 10&gt; values;&#x2F;&#x2F;不对其值进行初始化<br>  array2 &lt;int, 10&gt; values {};&#x2F;&#x2F;全部初始化为0<br>  array3 &lt;int, 10&gt; values {1, 2, 3};&#x2F;&#x2F;前三个初始化为相应值，后面的初始化为0<br>  &#x2F;&#x2F;array本质上仍然是静态数组，但其使用上更加安全可靠<br>  vector<int> v1;&#x2F;&#x2F;size为0，空vector且未分配内存<br>  vector<int> v2(10);&#x2F;&#x2F;已分配内存，且初始化为0<br>  vector<int> v3 &#x3D; {1,2,3};&#x2F;&#x2F;分配三个int内存，初始化为相应数值<br>  vector<int> v4 &#x3D; v3;&#x2F;&#x2F;等同于vector(int) v4(v3)，用另一个向量进行初始化<br>  vector<int> v5(10,1);&#x2F;&#x2F;10个都初始化为1<br>  &#x2F;&#x2F;vector类似于C语言的动态数组</li>
-<li>在初始化之外，作为一门面向对象的编程语言，array与vector还有许多高级成员函数，这里暂不讨论，以后需要使用时再讨论</li>
+<li><p>C++中的数组定义同C一样容易理解，下面是一种常规的数组定义办法</p>
+<pre><code>  int num[10];
+</code></pre>
+</li>
+<li><p>虽然C语言的malloc类语句仍然可以使用，但是C++也拥有自己的特性，即用new来实现分配内存。<em>同C语言类似，这种办法分配的内存需要使用delete进行释放。</em></p>
+<pre><code>  int *num = new int[10];
+  delete []num;
+</code></pre>
+</li>
+<li><p>除此之外，C++还提供了两个容器，一个是array，一个是vector，要使用它们，需要引用头文件，并使用命名空间std。</p>
+<pre><code>  #include &lt;array&gt;
+  #include &lt;vector&gt;
+  using namespace std;
+</code></pre>
+</li>
+<li><p>下面是他们的初始化</p>
+<pre><code>  array1 &lt;int, 10&gt; values;//不对其值进行初始化
+  array2 &lt;int, 10&gt; values &#123;&#125;;//全部初始化为0
+  array3 &lt;int, 10&gt; values &#123;1, 2, 3&#125;;//前三个初始化为相应值，后面的初始化为0
+  //array本质上仍然是静态数组，但其使用上更加安全可靠
+  vector&lt;int&gt; v1;//size为0，空vector且未分配内存
+  vector&lt;int&gt; v2(10);//已分配内存，且初始化为0
+  vector&lt;int&gt; v3 = &#123;1,2,3&#125;;//分配三个int内存，初始化为相应数值
+  vector&lt;int&gt; v4 = v3;//等同于vector(int) v4(v3)，用另一个向量进行初始化
+  vector&lt;int&gt; v5(10,1);//10个都初始化为1
+  //vector类似于C语言的动态数组
+</code></pre>
+</li>
+<li><p>在初始化之外，作为一门面向对象的编程语言，array与vector还有许多高级成员函数，这里暂不讨论，以后需要使用时再讨论</p>
+</li>
 </ul>
 </li>
 </ul>
@@ -624,7 +649,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-05-18 10:58:29" itemprop="dateModified" datetime="2023-05-18T10:58:29+08:00">2023-05-18</time>
+                <time title="修改时间：2023-05-18 11:12:23" itemprop="dateModified" datetime="2023-05-18T11:12:23+08:00">2023-05-18</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -654,34 +679,205 @@
           <p>用C语言实现简单的线性表结构</p>
 <ul>
 <li><h1 id="数组（插值，删除，改值，查值，遍历等）"><a href="#数组（插值，删除，改值，查值，遍历等）" class="headerlink" title="数组（插值，删除，改值，查值，遍历等）"></a>数组（插值，删除，改值，查值，遍历等）</h1><ul>
-<li>C语言中，定义一个数组是很简单的。定义一个满足题意的<strong>静态数组</strong>可以用如下代码实现。<br>  void DefineStaticArray(){<br>      int num[20];<br>      for(int i&#x3D;0; i&lt;20; i++){<br>          num[i] &#x3D; i+1;<br>      }<br>  }</li>
-<li>C语言中也可以使用malloc,calloc和realloc实现<strong>动态数组</strong>的效果，下面是代码实现。<em>需要注意的是，这种方式定义的数组需要在程序末尾进行free操作释放被分配的内存</em>。<br>  void DefineDynamicArray(){<br>      int <em>num &#x3D; NULL;<br>      num &#x3D; (int</em>)malloc(sizeof(int));<br>      num &#x3D; (int*)realloc(num, 20<em>sizeof(int));<br>      &#x2F;&#x2F;或者采用下面这一行<br>      &#x2F;&#x2F;num &#x3D; (int</em>)calloc(20,sizeof(int));<br>      for(int i&#x3D;0; i&lt;20; i++){<br>          *(num+i) &#x3D; i+1;<br>      }<br>  }</li>
-<li>也可以以下面一种形式定义<strong>柔性数组</strong>。这种数组结构要求一个结构体，结构体中数组成员必须处于任意其他数据类型的成员之后，且数组成员需要置于结构体末尾。定义完成后，使用sizeof(结构名)所返回的内存不包含数组内存，这种方法相比动态数组的优势在于访问效率更高一点。<br>  void DefineFlexibleArray(){<br>      typedef struct FlexibleArray{<br>          int i;<br>          int num[];<br>      }FA;<br>      FA <em>fa &#x3D; (FA</em>)malloc(sizeof(FA)+20*sizeof(int));<br>      fa-&gt;i &#x3D; 20;<br>      for(int i&#x3D;0;i&lt;20;i++){<br>          fa-&gt;num[i] &#x3D; i+1;<br>      }<br>  }</li>
-<li>插入和删除的操作本质上是一样的，都涉及到数组元素的位置移动，这里就只讨论插入值的操作。比如说我要将21这个数字插入第七个位置。<br>  void InsertStaticArray(int *num, int *n_num){<br>      for(int i&#x3D;0;i&lt;6;i++){<br>          n_num[i] &#x3D; num[i];<br>      }<br>      n_num[6]&#x3D;21;<br>      for(int i&#x3D;7;i&lt;21;i++){<br>          n_num[i] &#x3D; num[i-1];<br>      }<br>  }&#x2F;&#x2F;提前定义n_num数组，输出时输出n_num<br><br>  void InsertDynamicArray(){<br>      num &#x3D; (int*)realloc(num,21*sizeof(int));<br>      for(int i&#x3D;20;i&gt;6;i–){<br>          *(num+i) &#x3D; <em>(num+i-1);<br>      }<br>      <em>(num+6) &#x3D; 21;<br>  }<br><br>  void InsertFlexibleArray(){<br>      fa &#x3D; (FA</em>)realloc(fa, sizeof(FA)+21</em>sizeof(int));<br>      for(int i&#x3D;20;i&gt;6;i–){<br>          fa-&gt;num[i] &#x3D; fa-&gt;num[i-1];<br>      }<br>      fa-&gt;num[6] &#x3D; 21;<br>  }</li>
-<li>在上面的代码中可以看出，静态数组的插入操作不够方便，动态数组和柔性数组所采用的方法基本类似。</li>
-<li>在知道需要更改的数组元素的索引的情况下可以直接对值进行更改，查值则只需要一个遍历操作就可实现，这里也不再赘述。</li>
+<li><p>C语言中，定义一个数组是很简单的。定义一个满足题意的<strong>静态数组</strong>可以用如下代码实现。  </p>
+<pre><code>  void DefineStaticArray()&#123;
+      int num[20];
+      for(int i=0; i&lt;20; i++)&#123;
+          num[i] = i+1;
+      &#125;
+  &#125;
+</code></pre>
+</li>
+<li><p>C语言中也可以使用malloc,calloc和realloc实现<strong>动态数组</strong>的效果，下面是代码实现。<em>需要注意的是，这种方式定义的数组需要在程序末尾进行free操作释放被分配的内存</em>。  </p>
+<pre><code>  void DefineDynamicArray()&#123;
+      int *num = NULL;
+      num = (int*)malloc(sizeof(int));
+      num = (int*)realloc(num, 20*sizeof(int));
+      //或者采用下面这一行
+      //num = (int*)calloc(20,sizeof(int));
+      for(int i=0; i&lt;20; i++)&#123;
+          *(num+i) = i+1;
+      &#125;
+  &#125;
+</code></pre>
+</li>
+<li><p>也可以以下面一种形式定义<strong>柔性数组</strong>。这种数组结构要求一个结构体，结构体中数组成员必须处于任意其他数据类型的成员之后，且数组成员需要置于结构体末尾。定义完成后，使用sizeof(结构名)所返回的内存不包含数组内存，这种方法相比动态数组的优势在于访问效率更高一点。  </p>
+<pre><code>  void DefineFlexibleArray()&#123;
+      typedef struct FlexibleArray&#123;
+          int i;
+          int num[];
+      &#125;FA;
+      FA *fa = (FA*)malloc(sizeof(FA)+20*sizeof(int));
+      fa-&gt;i = 20;
+      for(int i=0;i&lt;20;i++)&#123;
+          fa-&gt;num[i] = i+1;
+      &#125;
+  &#125;
+</code></pre>
+</li>
+<li><p>插入和删除的操作本质上是一样的，都涉及到数组元素的位置移动，这里就只讨论插入值的操作。比如说我要将21这个数字插入第七个位置。  </p>
+<pre><code>  void InsertStaticArray(int *num, int *n_num)&#123;
+      for(int i=0;i&lt;6;i++)&#123;
+          n_num[i] = num[i];
+      &#125;
+      n_num[6]=21;
+      for(int i=7;i&lt;21;i++)&#123;
+          n_num[i] = num[i-1];
+      &#125;
+  &#125;//提前定义n_num数组，输出时输出n_num
+
+  void InsertDynamicArray()&#123;
+      num = (int*)realloc(num,21*sizeof(int));
+      for(int i=20;i&gt;6;i--)&#123;
+          *(num+i) = *(num+i-1);
+      &#125;
+      *(num+6) = 21;
+  &#125;
+
+  void InsertFlexibleArray()&#123;
+      fa = (FA*)realloc(fa, sizeof(FA)+21*sizeof(int));
+      for(int i=20;i&gt;6;i--)&#123;
+          fa-&gt;num[i] = fa-&gt;num[i-1];
+      &#125;
+      fa-&gt;num[6] = 21;
+  &#125;
+</code></pre>
+</li>
+<li><p>在上面的代码中可以看出，静态数组的插入操作不够方便，动态数组和柔性数组所采用的方法基本类似。</p>
+</li>
+<li><p>在知道需要更改的数组元素的索引的情况下可以直接对值进行更改，查值则只需要一个遍历操作就可实现，这里也不再赘述。</p>
+</li>
 </ul>
 </li>
 <li><h1 id="栈（创栈，入栈，出栈，遍历，判断是否为空，判断是否满栈，清空栈）"><a href="#栈（创栈，入栈，出栈，遍历，判断是否为空，判断是否满栈，清空栈）" class="headerlink" title="栈（创栈，入栈，出栈，遍历，判断是否为空，判断是否满栈，清空栈）"></a>栈（创栈，入栈，出栈，遍历，判断是否为空，判断是否满栈，清空栈）</h1><ul>
-<li>栈是一种操作受限的线性表，其是一种只允许在一端进行插入或删除的线性表，根据这个定义我们可以编写如下代码。这里定义这个栈有20个元素。（这里先不进行栈的拓展，只给出最基本的代码实现）<br>  typedef struct SeqStaticStack{<br>      int body[20];<br>      int top;<br>  }Stack;</li>
-<li>这样定义的栈初始化很简单,将值清理为0<br>  Stack <em>ps&#x3D;(Stack</em>)malloc(sizeof(Stack));<br>  for(int i&#x3D;0;i&lt;20;i++){<br>      ps-&gt;body[i] &#x3D; 0;<br>  }</li>
-<li>入栈<br>  int push(Stack *s, int i){<br>      if(s-&gt;top &#x3D;&#x3D; 20)<br>          return 1;<br>      else{<br>          s-&gt;body[s-&gt;top] &#x3D; i;<br>          s-&gt;top+&#x3D;1;<br>          return 0;<br>      }<br>  }</li>
-<li>出栈<br>  int pop(Stack *s){<br>      if(s-&gt;top &#x3D;&#x3D; 0)<br>          return 1;<br>      else{<br>          int i &#x3D; s-&gt;body[s-&gt;top-1];<br>          s-&gt;body[s-&gt;top-1] &#x3D; 0;<br>          s-&gt;top -&#x3D;1;<br>          return i;<br>      }<br>  }</li>
-<li>遍历<br>  void travel(Stack *s){<br>      if(s-&gt;top &#x3D;&#x3D; 0){<br>          printf(“empty\n”);<br>      }<br>      else{<br>          printf(“from bottom:”);<br>          for(int i&#x3D;0;i<s->top;i++){<br>              printf(“%d\t”,s-&gt;body[i]);<br>          }<br>      }<br>  };</li>
-<li>判断是否为空或者为满或者清空在这里不做赘述</li>
+<li><p>栈是一种操作受限的线性表，其是一种只允许在一端进行插入或删除的线性表，根据这个定义我们可以编写如下代码。这里定义这个栈有20个元素。（这里先不进行栈的拓展，只给出最基本的代码实现）  </p>
+<pre><code>  typedef struct SeqStaticStack&#123;
+      int body[20];
+      int top;
+  &#125;Stack;
+</code></pre>
+</li>
+<li><p>这样定义的栈初始化很简单,将值清理为0  </p>
+<pre><code>  Stack *ps=(Stack*)malloc(sizeof(Stack));
+  for(int i=0;i&lt;20;i++)&#123;
+      ps-&gt;body[i] = 0;
+  &#125;
+</code></pre>
+</li>
+<li><p>入栈</p>
+<pre><code>  int push(Stack *s, int i)&#123;
+      if(s-&gt;top == 20)
+          return 1;
+      else&#123;
+          s-&gt;body[s-&gt;top] = i;
+          s-&gt;top+=1;
+          return 0;
+      &#125;
+  &#125;
+</code></pre>
+</li>
+<li><p>出栈</p>
+<pre><code>  int pop(Stack *s)&#123;
+      if(s-&gt;top == 0)
+          return 1;
+      else&#123;
+          int i = s-&gt;body[s-&gt;top-1];
+          s-&gt;body[s-&gt;top-1] = 0;
+          s-&gt;top -=1;
+          return i;
+      &#125;
+  &#125;
+</code></pre>
+</li>
+<li><p>遍历</p>
+<pre><code>  void travel(Stack *s)&#123;
+      if(s-&gt;top == 0)&#123;
+          printf(&quot;empty\n&quot;);
+      &#125;
+      else&#123;
+          printf(&quot;from bottom:&quot;);
+          for(int i=0;i&lt;s-&gt;top;i++)&#123;
+              printf(&quot;%d\t&quot;,s-&gt;body[i]);
+          &#125;
+      &#125;
+  &#125;;
+</code></pre>
+</li>
+<li><p>判断是否为空或者为满或者清空在这里不做赘述</p>
+</li>
 </ul>
 </li>
 <li><h1 id="链表（初始化，插值，删值，查改值，遍历，内存释放等）（这里以单链表做示范）"><a href="#链表（初始化，插值，删值，查改值，遍历，内存释放等）（这里以单链表做示范）" class="headerlink" title="链表（初始化，插值，删值，查改值，遍历，内存释放等）（这里以单链表做示范）"></a>链表（初始化，插值，删值，查改值，遍历，内存释放等）（这里以单链表做示范）</h1><ul>
-<li>链表的初始化包含三个部分，因为结构上链表包含一个头节点，一个尾节点和多个中间节点（也可以没有），每种节点均需要分配内存和初始化，同时节点内部指针指向不同，这里先定义一个结构体。<br>  typedef struct LinkedListNode{<br>      int num;<br>      struct LinkedListNode *NP;<br>  }LLN;</li>
-<li>接下来是初始化，函数功能为输入一个数字，返回一个存储该数据的，没有指向任何其他节点的节点指针。<br>  LLN *InitNode(int n){<br>      LLN <em>node;<br>      node &#x3D; (LLN</em>)malloc(sizeof(LLN));<br>      node-&gt;num &#x3D; n;<br>      node-&gt;next &#x3D; NULL;<br>      return node;<br>  }</li>
-<li>接下来是插入节点，有三种插入方式，分别为头部插入，中间插入和尾部插入。<ul>
-<li>头插函数需要两个参数，第一个是头节点的指针，第二个是需要插入的节点的指针。函数返回整数。<br>  int HeadInsert(LLN *OHead,LLN *NHead){<br>      NHead-&gt;next &#x3D; OHead;<br>      if(NHead-&gt;next &#x3D;&#x3D; NULL){<br>          printf(“Failed,head node is still old one\n”);<br>          return 1;<br>      }<br>      printf(“Success,head node is new one\n”);<br>      return 0;<br>  }</li>
-<li>尾插函数需要两个参数，一个是头节点的指针，第二个是需要插入的节点的指针。函数无返回值。<br>  void TailInsert(LLN *Head,LLN *Tail){<br>      LLN *ptr &#x3D; Head;<br>      while(ptr-&gt;next!&#x3D;NULL){<br>          ptr &#x3D; ptr-&gt;next;<br>      }<br>      ptr-&gt;next &#x3D; Tail;<br>  }</li>
-<li>插入函数将把节点插入到原节点后方，需要两个参数，一个是原节点，一个是插入的节点。函数无返回值，该函数在知晓尾节点指针时也可直接做尾插操作。<br>  void Insert(LLN *f,LLN *n){<br>      n-&gt;next &#x3D; f-&gt;next;<br>      f-&gt;next &#x3D; n;<br>  }</li>
+<li><p>链表的初始化包含三个部分，因为结构上链表包含一个头节点，一个尾节点和多个中间节点（也可以没有），每种节点均需要分配内存和初始化，同时节点内部指针指向不同，这里先定义一个结构体。</p>
+<pre><code>  typedef struct LinkedListNode&#123;
+      int num;
+      struct LinkedListNode *NP;
+  &#125;LLN;
+</code></pre>
+</li>
+<li><p>接下来是初始化，函数功能为输入一个数字，返回一个存储该数据的，没有指向任何其他节点的节点指针。</p>
+<pre><code>  LLN *InitNode(int n)&#123;
+      LLN *node;
+      node = (LLN*)malloc(sizeof(LLN));
+      node-&gt;num = n;
+      node-&gt;next = NULL;
+      return node;
+  &#125;
+</code></pre>
+</li>
+<li><p>接下来是插入节点，有三种插入方式，分别为头部插入，中间插入和尾部插入。</p>
+<ul>
+<li><p>头插函数需要两个参数，第一个是头节点的指针，第二个是需要插入的节点的指针。函数返回整数。</p>
+<pre><code>  int HeadInsert(LLN *OHead,LLN *NHead)&#123;
+      NHead-&gt;next = OHead;
+      if(NHead-&gt;next == NULL)&#123;
+          printf(&quot;Failed,head node is still old one\n&quot;);
+          return 1;
+      &#125;
+      printf(&quot;Success,head node is new one\n&quot;);
+      return 0;
+  &#125;
+</code></pre>
+</li>
+<li><p>尾插函数需要两个参数，一个是头节点的指针，第二个是需要插入的节点的指针。函数无返回值。<br>  void TailInsert(LLN *Head,LLN *Tail){<br>      LLN *ptr &#x3D; Head;<br>      while(ptr-&gt;next!&#x3D;NULL){<br>          ptr &#x3D; ptr-&gt;next;<br>      }<br>      ptr-&gt;next &#x3D; Tail;<br>  }</p>
+</li>
+<li><p>插入函数将把节点插入到原节点后方，需要两个参数，一个是原节点，一个是插入的节点。函数无返回值，该函数在知晓尾节点指针时也可直接做尾插操作。</p>
+<pre><code>  void Insert(LLN *f,LLN *n)&#123;
+      n-&gt;next = f-&gt;next;
+      f-&gt;next = n;
+  &#125;
+</code></pre>
+</li>
 </ul>
 </li>
-<li>删除函数要求传入链表头节点和一个需要从表中删除的数据，无返回值。注意该函数没有将节点free，也就是说其相当于将节点从链表中移除了。<br>  void Delete(LLN *head, int num){<br>      LLN *ptr &#x3D; head;<br>      LLN *pt &#x3D; NULL;<br>      while(1){<br>          if(ptr-&gt;num!&#x3D;num){<br>              pt &#x3D; ptr;<br>              ptr &#x3D; ptr-&gt;next;<br>          }<br>          else break;<br>      }<br>      if(pt!&#x3D;NULL)<br>          pt-&gt;next &#x3D; ptr-&gt;next;<br>      ptr-&gt;next &#x3D; NULL;<br>  }</li>
-<li>查改值和遍历与上面类似，这里贴一个遍历，输出传入节点之后的所有节点值，当节点为头时输出链表内值。<br>  void travel(LLN *head){<br>      LLN *ptr &#x3D; head;<br>      while(ptr-&gt;next!&#x3D;NULL){<br>          printf(“%d\t”,ptr-&gt;num);<br>          ptr &#x3D; ptr-&gt;next;<br>      }<br>      printf(“%d\n”,ptr-&gt;num);<br>  }</li>
+<li><p>删除函数要求传入链表头节点和一个需要从表中删除的数据，无返回值。注意该函数没有将节点free，也就是说其相当于将节点从链表中移除了。</p>
+<pre><code>  void Delete(LLN *head, int num)&#123;
+      LLN *ptr = head;
+      LLN *pt = NULL;
+      while(1)&#123;
+          if(ptr-&gt;num!=num)&#123;
+              pt = ptr;
+              ptr = ptr-&gt;next;
+          &#125;
+          else break;
+      &#125;
+      if(pt!=NULL)
+          pt-&gt;next = ptr-&gt;next;
+      ptr-&gt;next = NULL;
+  &#125;
+</code></pre>
+</li>
+<li><p>查改值和遍历与上面类似，这里贴一个遍历，输出传入节点之后的所有节点值，当节点为头时输出链表内值。</p>
+<pre><code>  void travel(LLN *head)&#123;
+      LLN *ptr = head;
+      while(ptr-&gt;next!=NULL)&#123;
+          printf(&quot;%d\t&quot;,ptr-&gt;num);
+          ptr = ptr-&gt;next;
+      &#125;
+      printf(&quot;%d\n&quot;,ptr-&gt;num);
+  &#125;
+</code></pre>
+</li>
 </ul>
 </li>
 <li><h1 id="队列（初始化，入队，出队，遍历等，和栈基本类似）"><a href="#队列（初始化，入队，出队，遍历等，和栈基本类似）" class="headerlink" title="队列（初始化，入队，出队，遍历等，和栈基本类似）"></a>队列（初始化，入队，出队，遍历等，和栈基本类似）</h1><ul>
