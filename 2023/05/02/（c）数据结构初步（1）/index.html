@@ -20,15 +20,15 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"hide","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="用C语言实现简单的线性表结构 数组（插值，删除，改值，查值，遍历等） C语言中，定义一个数组是很简单的。定义一个满足题意的静态数组可以用如下代码实现。  void DefineStaticArray()&amp;#123;       int num[20];       for(int i&#x3D;0; i&lt;20; i++)&amp;#123;           num[i] &#x3D; i+1;       &amp;#12">
+  <meta name="description" content="用C语言实现简单的线性表结构  数组（插值，删除，改值，查值，遍历等） C语言中，定义一个数组是很简单的。定义一个满足题意的静态数组可以用如下代码实现。  void DefineStaticArray(){      int num[20];      for(int i&#x3D;0; i&lt;20; i++){          num[i] &#x3D; i+1;      }  } C语">
 <meta property="og:type" content="article">
 <meta property="og:title" content="（c）数据结构初步（1）">
 <meta property="og:url" content="http://example.com/2023/05/02/%EF%BC%88c%EF%BC%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%88%9D%E6%AD%A5%EF%BC%881%EF%BC%89/index.html">
 <meta property="og:site_name" content="MJD&#39;s Blog">
-<meta property="og:description" content="用C语言实现简单的线性表结构 数组（插值，删除，改值，查值，遍历等） C语言中，定义一个数组是很简单的。定义一个满足题意的静态数组可以用如下代码实现。  void DefineStaticArray()&amp;#123;       int num[20];       for(int i&#x3D;0; i&lt;20; i++)&amp;#123;           num[i] &#x3D; i+1;       &amp;#12">
+<meta property="og:description" content="用C语言实现简单的线性表结构  数组（插值，删除，改值，查值，遍历等） C语言中，定义一个数组是很简单的。定义一个满足题意的静态数组可以用如下代码实现。  void DefineStaticArray(){      int num[20];      for(int i&#x3D;0; i&lt;20; i++){          num[i] &#x3D; i+1;      }  } C语">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-05-02T12:00:45.000Z">
-<meta property="article:modified_time" content="2023-05-18T02:43:48.783Z">
+<meta property="article:modified_time" content="2023-05-18T02:58:29.529Z">
 <meta property="article:author" content="Majsjdkcmdn">
 <meta property="article:tag" content="数据结构">
 <meta property="article:tag" content="C">
@@ -220,7 +220,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-05-18 10:43:48" itemprop="dateModified" datetime="2023-05-18T10:43:48+08:00">2023-05-18</time>
+                <time title="修改时间：2023-05-18 10:58:29" itemprop="dateModified" datetime="2023-05-18T10:58:29+08:00">2023-05-18</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -247,202 +247,44 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h3 id="用C语言实现简单的线性表结构"><a href="#用C语言实现简单的线性表结构" class="headerlink" title="用C语言实现简单的线性表结构"></a>用C语言实现简单的线性表结构</h3><ul>
+        <p>用C语言实现简单的线性表结构</p>
+<ul>
 <li><h1 id="数组（插值，删除，改值，查值，遍历等）"><a href="#数组（插值，删除，改值，查值，遍历等）" class="headerlink" title="数组（插值，删除，改值，查值，遍历等）"></a>数组（插值，删除，改值，查值，遍历等）</h1><ul>
-<li><h3 id="C语言中，定义一个数组是很简单的。定义一个满足题意的静态数组可以用如下代码实现。"><a href="#C语言中，定义一个数组是很简单的。定义一个满足题意的静态数组可以用如下代码实现。" class="headerlink" title="C语言中，定义一个数组是很简单的。定义一个满足题意的静态数组可以用如下代码实现。"></a>C语言中，定义一个数组是很简单的。定义一个满足题意的<strong>静态数组</strong>可以用如下代码实现。</h3><pre><code>  void DefineStaticArray()&#123;
-      int num[20];
-      for(int i=0; i&lt;20; i++)&#123;
-          num[i] = i+1;
-      &#125;
-  &#125;
-</code></pre>
-</li>
-<li><h3 id="C语言中也可以使用malloc-calloc和realloc实现动态数组的效果，下面是代码实现。需要注意的是，这种方式定义的数组需要在程序末尾进行free操作释放被分配的内存。"><a href="#C语言中也可以使用malloc-calloc和realloc实现动态数组的效果，下面是代码实现。需要注意的是，这种方式定义的数组需要在程序末尾进行free操作释放被分配的内存。" class="headerlink" title="C语言中也可以使用malloc,calloc和realloc实现动态数组的效果，下面是代码实现。需要注意的是，这种方式定义的数组需要在程序末尾进行free操作释放被分配的内存。"></a>C语言中也可以使用malloc,calloc和realloc实现<strong>动态数组</strong>的效果，下面是代码实现。<em>需要注意的是，这种方式定义的数组需要在程序末尾进行free操作释放被分配的内存</em>。</h3><pre><code>  void DefineDynamicArray()&#123;
-      int *num = NULL;
-      num = (int*)malloc(sizeof(int));
-      num = (int*)realloc(num, 20*sizeof(int));
-      //或者采用下面这一行
-      //num = (int*)calloc(20,sizeof(int));
-      for(int i=0; i&lt;20; i++)&#123;
-          *(num+i) = i+1;
-      &#125;
-  &#125;
-</code></pre>
-</li>
-<li><h3 id="也可以以下面一种形式定义柔性数组。这种数组结构要求一个结构体，结构体中数组成员必须处于任意其他数据类型的成员之后，且数组成员需要置于结构体末尾。定义完成后，使用sizeof-结构名-所返回的内存不包含数组内存，这种方法相比动态数组的优势在于访问效率更高一点。"><a href="#也可以以下面一种形式定义柔性数组。这种数组结构要求一个结构体，结构体中数组成员必须处于任意其他数据类型的成员之后，且数组成员需要置于结构体末尾。定义完成后，使用sizeof-结构名-所返回的内存不包含数组内存，这种方法相比动态数组的优势在于访问效率更高一点。" class="headerlink" title="也可以以下面一种形式定义柔性数组。这种数组结构要求一个结构体，结构体中数组成员必须处于任意其他数据类型的成员之后，且数组成员需要置于结构体末尾。定义完成后，使用sizeof(结构名)所返回的内存不包含数组内存，这种方法相比动态数组的优势在于访问效率更高一点。"></a>也可以以下面一种形式定义<strong>柔性数组</strong>。这种数组结构要求一个结构体，结构体中数组成员必须处于任意其他数据类型的成员之后，且数组成员需要置于结构体末尾。定义完成后，使用sizeof(结构名)所返回的内存不包含数组内存，这种方法相比动态数组的优势在于访问效率更高一点。</h3><pre><code>  void DefineFlexibleArray()&#123;
-      typedef struct FlexibleArray&#123;
-          int i;
-          int num[];
-      &#125;FA;
-      FA *fa = (FA*)malloc(sizeof(FA)+20*sizeof(int));
-      fa-&gt;i = 20;
-      for(int i=0;i&lt;20;i++)&#123;
-          fa-&gt;num[i] = i+1;
-      &#125;
-  &#125;
-</code></pre>
-</li>
-<li><h3 id="插入和删除的操作本质上是一样的，都涉及到数组元素的位置移动，这里就只讨论插入值的操作。比如说我要将21这个数字插入第七个位置。"><a href="#插入和删除的操作本质上是一样的，都涉及到数组元素的位置移动，这里就只讨论插入值的操作。比如说我要将21这个数字插入第七个位置。" class="headerlink" title="插入和删除的操作本质上是一样的，都涉及到数组元素的位置移动，这里就只讨论插入值的操作。比如说我要将21这个数字插入第七个位置。"></a>插入和删除的操作本质上是一样的，都涉及到数组元素的位置移动，这里就只讨论插入值的操作。比如说我要将21这个数字插入第七个位置。</h3><pre><code>  void InsertStaticArray(int *num, int *n_num)&#123;
-      for(int i=0;i&lt;6;i++)&#123;
-          n_num[i] = num[i];
-      &#125;
-      n_num[6]=21;
-      for(int i=7;i&lt;21;i++)&#123;
-          n_num[i] = num[i-1];
-      &#125;
-  &#125;//提前定义n_num数组，输出时输出n_num
-
-  void InsertDynamicArray()&#123;
-      num = (int*)realloc(num,21*sizeof(int));
-      for(int i=20;i&gt;6;i--)&#123;
-          *(num+i) = *(num+i-1);
-      &#125;
-      *(num+6) = 21;
-  &#125;
-
-  void InsertFlexibleArray()&#123;
-      fa = (FA*)realloc(fa, sizeof(FA)+21*sizeof(int));
-      for(int i=20;i&gt;6;i--)&#123;
-          fa-&gt;num[i] = fa-&gt;num[i-1];
-      &#125;
-      fa-&gt;num[6] = 21;
-  &#125;
-</code></pre>
-</li>
-<li><h3 id="在上面的代码中可以看出，静态数组的插入操作不够方便，动态数组和柔性数组所采用的方法基本类似。"><a href="#在上面的代码中可以看出，静态数组的插入操作不够方便，动态数组和柔性数组所采用的方法基本类似。" class="headerlink" title="在上面的代码中可以看出，静态数组的插入操作不够方便，动态数组和柔性数组所采用的方法基本类似。"></a>在上面的代码中可以看出，静态数组的插入操作不够方便，动态数组和柔性数组所采用的方法基本类似。</h3></li>
-<li><h3 id="在知道需要更改的数组元素的索引的情况下可以直接对值进行更改，查值则只需要一个遍历操作就可实现，这里也不再赘述。"><a href="#在知道需要更改的数组元素的索引的情况下可以直接对值进行更改，查值则只需要一个遍历操作就可实现，这里也不再赘述。" class="headerlink" title="在知道需要更改的数组元素的索引的情况下可以直接对值进行更改，查值则只需要一个遍历操作就可实现，这里也不再赘述。"></a>在知道需要更改的数组元素的索引的情况下可以直接对值进行更改，查值则只需要一个遍历操作就可实现，这里也不再赘述。</h3></li>
+<li>C语言中，定义一个数组是很简单的。定义一个满足题意的<strong>静态数组</strong>可以用如下代码实现。<br>  void DefineStaticArray(){<br>      int num[20];<br>      for(int i&#x3D;0; i&lt;20; i++){<br>          num[i] &#x3D; i+1;<br>      }<br>  }</li>
+<li>C语言中也可以使用malloc,calloc和realloc实现<strong>动态数组</strong>的效果，下面是代码实现。<em>需要注意的是，这种方式定义的数组需要在程序末尾进行free操作释放被分配的内存</em>。<br>  void DefineDynamicArray(){<br>      int <em>num &#x3D; NULL;<br>      num &#x3D; (int</em>)malloc(sizeof(int));<br>      num &#x3D; (int*)realloc(num, 20<em>sizeof(int));<br>      &#x2F;&#x2F;或者采用下面这一行<br>      &#x2F;&#x2F;num &#x3D; (int</em>)calloc(20,sizeof(int));<br>      for(int i&#x3D;0; i&lt;20; i++){<br>          *(num+i) &#x3D; i+1;<br>      }<br>  }</li>
+<li>也可以以下面一种形式定义<strong>柔性数组</strong>。这种数组结构要求一个结构体，结构体中数组成员必须处于任意其他数据类型的成员之后，且数组成员需要置于结构体末尾。定义完成后，使用sizeof(结构名)所返回的内存不包含数组内存，这种方法相比动态数组的优势在于访问效率更高一点。<br>  void DefineFlexibleArray(){<br>      typedef struct FlexibleArray{<br>          int i;<br>          int num[];<br>      }FA;<br>      FA <em>fa &#x3D; (FA</em>)malloc(sizeof(FA)+20*sizeof(int));<br>      fa-&gt;i &#x3D; 20;<br>      for(int i&#x3D;0;i&lt;20;i++){<br>          fa-&gt;num[i] &#x3D; i+1;<br>      }<br>  }</li>
+<li>插入和删除的操作本质上是一样的，都涉及到数组元素的位置移动，这里就只讨论插入值的操作。比如说我要将21这个数字插入第七个位置。<br>  void InsertStaticArray(int *num, int *n_num){<br>      for(int i&#x3D;0;i&lt;6;i++){<br>          n_num[i] &#x3D; num[i];<br>      }<br>      n_num[6]&#x3D;21;<br>      for(int i&#x3D;7;i&lt;21;i++){<br>          n_num[i] &#x3D; num[i-1];<br>      }<br>  }&#x2F;&#x2F;提前定义n_num数组，输出时输出n_num<br><br>  void InsertDynamicArray(){<br>      num &#x3D; (int*)realloc(num,21*sizeof(int));<br>      for(int i&#x3D;20;i&gt;6;i–){<br>          *(num+i) &#x3D; <em>(num+i-1);<br>      }<br>      <em>(num+6) &#x3D; 21;<br>  }<br><br>  void InsertFlexibleArray(){<br>      fa &#x3D; (FA</em>)realloc(fa, sizeof(FA)+21</em>sizeof(int));<br>      for(int i&#x3D;20;i&gt;6;i–){<br>          fa-&gt;num[i] &#x3D; fa-&gt;num[i-1];<br>      }<br>      fa-&gt;num[6] &#x3D; 21;<br>  }</li>
+<li>在上面的代码中可以看出，静态数组的插入操作不够方便，动态数组和柔性数组所采用的方法基本类似。</li>
+<li>在知道需要更改的数组元素的索引的情况下可以直接对值进行更改，查值则只需要一个遍历操作就可实现，这里也不再赘述。</li>
 </ul>
 </li>
 <li><h1 id="栈（创栈，入栈，出栈，遍历，判断是否为空，判断是否满栈，清空栈）"><a href="#栈（创栈，入栈，出栈，遍历，判断是否为空，判断是否满栈，清空栈）" class="headerlink" title="栈（创栈，入栈，出栈，遍历，判断是否为空，判断是否满栈，清空栈）"></a>栈（创栈，入栈，出栈，遍历，判断是否为空，判断是否满栈，清空栈）</h1><ul>
-<li><h3 id="栈是一种操作受限的线性表，其是一种只允许在一端进行插入或删除的线性表，根据这个定义我们可以编写如下代码。这里定义这个栈有20个元素。（这里先不进行栈的拓展，只给出最基本的代码实现）"><a href="#栈是一种操作受限的线性表，其是一种只允许在一端进行插入或删除的线性表，根据这个定义我们可以编写如下代码。这里定义这个栈有20个元素。（这里先不进行栈的拓展，只给出最基本的代码实现）" class="headerlink" title="栈是一种操作受限的线性表，其是一种只允许在一端进行插入或删除的线性表，根据这个定义我们可以编写如下代码。这里定义这个栈有20个元素。（这里先不进行栈的拓展，只给出最基本的代码实现）"></a>栈是一种操作受限的线性表，其是一种只允许在一端进行插入或删除的线性表，根据这个定义我们可以编写如下代码。这里定义这个栈有20个元素。（这里先不进行栈的拓展，只给出最基本的代码实现）</h3><pre><code>  typedef struct SeqStaticStack&#123;
-      int body[20];
-      int top;
-  &#125;Stack;
-</code></pre>
-</li>
-<li><h3 id="这样定义的栈初始化很简单-将值清理为0"><a href="#这样定义的栈初始化很简单-将值清理为0" class="headerlink" title="这样定义的栈初始化很简单,将值清理为0"></a>这样定义的栈初始化很简单,将值清理为0</h3><pre><code>  Stack *ps=(Stack*)malloc(sizeof(Stack));
-  for(int i=0;i&lt;20;i++)&#123;
-      ps-&gt;body[i] = 0;
-  &#125;
-</code></pre>
-</li>
-<li><h3 id="入栈"><a href="#入栈" class="headerlink" title="入栈"></a>入栈</h3><pre><code>  int push(Stack *s, int i)&#123;
-      if(s-&gt;top == 20)
-          return 1;
-      else&#123;
-          s-&gt;body[s-&gt;top] = i;
-          s-&gt;top+=1;
-          return 0;
-      &#125;
-  &#125;
-</code></pre>
-</li>
-<li><h3 id="出栈"><a href="#出栈" class="headerlink" title="出栈"></a>出栈</h3><pre><code>  int pop(Stack *s)&#123;
-      if(s-&gt;top == 0)
-          return 1;
-      else&#123;
-          int i = s-&gt;body[s-&gt;top-1];
-          s-&gt;body[s-&gt;top-1] = 0;
-          s-&gt;top -=1;
-          return i;
-      &#125;
-  &#125;
-</code></pre>
-</li>
-<li><h3 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h3><pre><code>  void travel(Stack *s)&#123;
-      if(s-&gt;top == 0)&#123;
-          printf(&quot;empty\n&quot;);
-      &#125;
-      else&#123;
-          printf(&quot;from bottom:&quot;);
-          for(int i=0;i&lt;s-&gt;top;i++)&#123;
-              printf(&quot;%d\t&quot;,s-&gt;body[i]);
-          &#125;
-      &#125;
-  &#125;;
-</code></pre>
-</li>
-<li><h3 id="判断是否为空或者为满或者清空在这里不做赘述"><a href="#判断是否为空或者为满或者清空在这里不做赘述" class="headerlink" title="判断是否为空或者为满或者清空在这里不做赘述"></a>判断是否为空或者为满或者清空在这里不做赘述</h3></li>
+<li>栈是一种操作受限的线性表，其是一种只允许在一端进行插入或删除的线性表，根据这个定义我们可以编写如下代码。这里定义这个栈有20个元素。（这里先不进行栈的拓展，只给出最基本的代码实现）<br>  typedef struct SeqStaticStack{<br>      int body[20];<br>      int top;<br>  }Stack;</li>
+<li>这样定义的栈初始化很简单,将值清理为0<br>  Stack <em>ps&#x3D;(Stack</em>)malloc(sizeof(Stack));<br>  for(int i&#x3D;0;i&lt;20;i++){<br>      ps-&gt;body[i] &#x3D; 0;<br>  }</li>
+<li>入栈<br>  int push(Stack *s, int i){<br>      if(s-&gt;top &#x3D;&#x3D; 20)<br>          return 1;<br>      else{<br>          s-&gt;body[s-&gt;top] &#x3D; i;<br>          s-&gt;top+&#x3D;1;<br>          return 0;<br>      }<br>  }</li>
+<li>出栈<br>  int pop(Stack *s){<br>      if(s-&gt;top &#x3D;&#x3D; 0)<br>          return 1;<br>      else{<br>          int i &#x3D; s-&gt;body[s-&gt;top-1];<br>          s-&gt;body[s-&gt;top-1] &#x3D; 0;<br>          s-&gt;top -&#x3D;1;<br>          return i;<br>      }<br>  }</li>
+<li>遍历<br>  void travel(Stack *s){<br>      if(s-&gt;top &#x3D;&#x3D; 0){<br>          printf(“empty\n”);<br>      }<br>      else{<br>          printf(“from bottom:”);<br>          for(int i&#x3D;0;i<s->top;i++){<br>              printf(“%d\t”,s-&gt;body[i]);<br>          }<br>      }<br>  };</li>
+<li>判断是否为空或者为满或者清空在这里不做赘述</li>
 </ul>
 </li>
 <li><h1 id="链表（初始化，插值，删值，查改值，遍历，内存释放等）（这里以单链表做示范）"><a href="#链表（初始化，插值，删值，查改值，遍历，内存释放等）（这里以单链表做示范）" class="headerlink" title="链表（初始化，插值，删值，查改值，遍历，内存释放等）（这里以单链表做示范）"></a>链表（初始化，插值，删值，查改值，遍历，内存释放等）（这里以单链表做示范）</h1><ul>
-<li><h3 id="链表的初始化包含三个部分，因为结构上链表包含一个头节点，一个尾节点和多个中间节点（也可以没有），每种节点均需要分配内存和初始化，同时节点内部指针指向不同，这里先定义一个结构体。"><a href="#链表的初始化包含三个部分，因为结构上链表包含一个头节点，一个尾节点和多个中间节点（也可以没有），每种节点均需要分配内存和初始化，同时节点内部指针指向不同，这里先定义一个结构体。" class="headerlink" title="链表的初始化包含三个部分，因为结构上链表包含一个头节点，一个尾节点和多个中间节点（也可以没有），每种节点均需要分配内存和初始化，同时节点内部指针指向不同，这里先定义一个结构体。"></a>链表的初始化包含三个部分，因为结构上链表包含一个头节点，一个尾节点和多个中间节点（也可以没有），每种节点均需要分配内存和初始化，同时节点内部指针指向不同，这里先定义一个结构体。</h3><pre><code>  typedef struct LinkedListNode&#123;
-      int num;
-      struct LinkedListNode *NP;
-  &#125;LLN;
-</code></pre>
-</li>
-<li><h3 id="接下来是初始化，函数功能为输入一个数字，返回一个存储该数据的，没有指向任何其他节点的节点指针。"><a href="#接下来是初始化，函数功能为输入一个数字，返回一个存储该数据的，没有指向任何其他节点的节点指针。" class="headerlink" title="接下来是初始化，函数功能为输入一个数字，返回一个存储该数据的，没有指向任何其他节点的节点指针。"></a>接下来是初始化，函数功能为输入一个数字，返回一个存储该数据的，没有指向任何其他节点的节点指针。</h3><pre><code>  LLN *InitNode(int n)&#123;
-      LLN *node;
-      node = (LLN*)malloc(sizeof(LLN));
-      node-&gt;num = n;
-      node-&gt;next = NULL;
-      return node;
-  &#125;
-</code></pre>
-</li>
-<li><h3 id="接下来是插入节点，有三种插入方式，分别为头部插入，中间插入和尾部插入。"><a href="#接下来是插入节点，有三种插入方式，分别为头部插入，中间插入和尾部插入。" class="headerlink" title="接下来是插入节点，有三种插入方式，分别为头部插入，中间插入和尾部插入。"></a>接下来是插入节点，有三种插入方式，分别为头部插入，中间插入和尾部插入。</h3><ul>
-<li><h3 id="头插函数需要两个参数，第一个是头节点的指针，第二个是需要插入的节点的指针。函数返回整数。"><a href="#头插函数需要两个参数，第一个是头节点的指针，第二个是需要插入的节点的指针。函数返回整数。" class="headerlink" title="头插函数需要两个参数，第一个是头节点的指针，第二个是需要插入的节点的指针。函数返回整数。"></a>头插函数需要两个参数，第一个是头节点的指针，第二个是需要插入的节点的指针。函数返回整数。</h3><pre><code>  int HeadInsert(LLN *OHead,LLN *NHead)&#123;
-      NHead-&gt;next = OHead;
-      if(NHead-&gt;next == NULL)&#123;
-          printf(&quot;Failed,head node is still old one\n&quot;);
-          return 1;
-      &#125;
-      printf(&quot;Success,head node is new one\n&quot;);
-      return 0;
-  &#125;
-</code></pre>
-</li>
-<li><h3 id="尾插函数需要两个参数，一个是头节点的指针，第二个是需要插入的节点的指针。函数无返回值。"><a href="#尾插函数需要两个参数，一个是头节点的指针，第二个是需要插入的节点的指针。函数无返回值。" class="headerlink" title="尾插函数需要两个参数，一个是头节点的指针，第二个是需要插入的节点的指针。函数无返回值。"></a>尾插函数需要两个参数，一个是头节点的指针，第二个是需要插入的节点的指针。函数无返回值。</h3><pre><code>  void TailInsert(LLN *Head,LLN *Tail)&#123;
-      LLN *ptr = Head;
-      while(ptr-&gt;next!=NULL)&#123;
-          ptr = ptr-&gt;next;
-      &#125;
-      ptr-&gt;next = Tail;
-  &#125;
-</code></pre>
-</li>
-<li><h3 id="插入函数将把节点插入到原节点后方，需要两个参数，一个是原节点，一个是插入的节点。函数无返回值，该函数在知晓尾节点指针时也可直接做尾插操作。"><a href="#插入函数将把节点插入到原节点后方，需要两个参数，一个是原节点，一个是插入的节点。函数无返回值，该函数在知晓尾节点指针时也可直接做尾插操作。" class="headerlink" title="插入函数将把节点插入到原节点后方，需要两个参数，一个是原节点，一个是插入的节点。函数无返回值，该函数在知晓尾节点指针时也可直接做尾插操作。"></a>插入函数将把节点插入到原节点后方，需要两个参数，一个是原节点，一个是插入的节点。函数无返回值，该函数在知晓尾节点指针时也可直接做尾插操作。</h3><pre><code>  void Insert(LLN *f,LLN *n)&#123;
-      n-&gt;next = f-&gt;next;
-      f-&gt;next = n;
-  &#125;
-</code></pre>
-</li>
+<li>链表的初始化包含三个部分，因为结构上链表包含一个头节点，一个尾节点和多个中间节点（也可以没有），每种节点均需要分配内存和初始化，同时节点内部指针指向不同，这里先定义一个结构体。<br>  typedef struct LinkedListNode{<br>      int num;<br>      struct LinkedListNode *NP;<br>  }LLN;</li>
+<li>接下来是初始化，函数功能为输入一个数字，返回一个存储该数据的，没有指向任何其他节点的节点指针。<br>  LLN *InitNode(int n){<br>      LLN <em>node;<br>      node &#x3D; (LLN</em>)malloc(sizeof(LLN));<br>      node-&gt;num &#x3D; n;<br>      node-&gt;next &#x3D; NULL;<br>      return node;<br>  }</li>
+<li>接下来是插入节点，有三种插入方式，分别为头部插入，中间插入和尾部插入。<ul>
+<li>头插函数需要两个参数，第一个是头节点的指针，第二个是需要插入的节点的指针。函数返回整数。<br>  int HeadInsert(LLN *OHead,LLN *NHead){<br>      NHead-&gt;next &#x3D; OHead;<br>      if(NHead-&gt;next &#x3D;&#x3D; NULL){<br>          printf(“Failed,head node is still old one\n”);<br>          return 1;<br>      }<br>      printf(“Success,head node is new one\n”);<br>      return 0;<br>  }</li>
+<li>尾插函数需要两个参数，一个是头节点的指针，第二个是需要插入的节点的指针。函数无返回值。<br>  void TailInsert(LLN *Head,LLN *Tail){<br>      LLN *ptr &#x3D; Head;<br>      while(ptr-&gt;next!&#x3D;NULL){<br>          ptr &#x3D; ptr-&gt;next;<br>      }<br>      ptr-&gt;next &#x3D; Tail;<br>  }</li>
+<li>插入函数将把节点插入到原节点后方，需要两个参数，一个是原节点，一个是插入的节点。函数无返回值，该函数在知晓尾节点指针时也可直接做尾插操作。<br>  void Insert(LLN *f,LLN *n){<br>      n-&gt;next &#x3D; f-&gt;next;<br>      f-&gt;next &#x3D; n;<br>  }</li>
 </ul>
 </li>
-<li><h3 id="删除函数要求传入链表头节点和一个需要从表中删除的数据，无返回值。注意该函数没有将节点free，也就是说其相当于将节点从链表中移除了。"><a href="#删除函数要求传入链表头节点和一个需要从表中删除的数据，无返回值。注意该函数没有将节点free，也就是说其相当于将节点从链表中移除了。" class="headerlink" title="删除函数要求传入链表头节点和一个需要从表中删除的数据，无返回值。注意该函数没有将节点free，也就是说其相当于将节点从链表中移除了。"></a>删除函数要求传入链表头节点和一个需要从表中删除的数据，无返回值。注意该函数没有将节点free，也就是说其相当于将节点从链表中移除了。</h3><pre><code>  void Delete(LLN *head, int num)&#123;
-      LLN *ptr = head;
-      LLN *pt = NULL;
-      while(1)&#123;
-          if(ptr-&gt;num!=num)&#123;
-              pt = ptr;
-              ptr = ptr-&gt;next;
-          &#125;
-          else break;
-      &#125;
-      if(pt!=NULL)
-          pt-&gt;next = ptr-&gt;next;
-      ptr-&gt;next = NULL;
-  &#125;
-</code></pre>
-</li>
-<li><h3 id="查改值和遍历与上面类似，这里贴一个遍历，输出传入节点之后的所有节点值，当节点为头时输出链表内值。"><a href="#查改值和遍历与上面类似，这里贴一个遍历，输出传入节点之后的所有节点值，当节点为头时输出链表内值。" class="headerlink" title="查改值和遍历与上面类似，这里贴一个遍历，输出传入节点之后的所有节点值，当节点为头时输出链表内值。"></a>查改值和遍历与上面类似，这里贴一个遍历，输出传入节点之后的所有节点值，当节点为头时输出链表内值。</h3><pre><code>  void travel(LLN *head)&#123;
-      LLN *ptr = head;
-      while(ptr-&gt;next!=NULL)&#123;
-          printf(&quot;%d\t&quot;,ptr-&gt;num);
-          ptr = ptr-&gt;next;
-      &#125;
-      printf(&quot;%d\n&quot;,ptr-&gt;num);
-  &#125;
-</code></pre>
-</li>
+<li>删除函数要求传入链表头节点和一个需要从表中删除的数据，无返回值。注意该函数没有将节点free，也就是说其相当于将节点从链表中移除了。<br>  void Delete(LLN *head, int num){<br>      LLN *ptr &#x3D; head;<br>      LLN *pt &#x3D; NULL;<br>      while(1){<br>          if(ptr-&gt;num!&#x3D;num){<br>              pt &#x3D; ptr;<br>              ptr &#x3D; ptr-&gt;next;<br>          }<br>          else break;<br>      }<br>      if(pt!&#x3D;NULL)<br>          pt-&gt;next &#x3D; ptr-&gt;next;<br>      ptr-&gt;next &#x3D; NULL;<br>  }</li>
+<li>查改值和遍历与上面类似，这里贴一个遍历，输出传入节点之后的所有节点值，当节点为头时输出链表内值。<br>  void travel(LLN *head){<br>      LLN *ptr &#x3D; head;<br>      while(ptr-&gt;next!&#x3D;NULL){<br>          printf(“%d\t”,ptr-&gt;num);<br>          ptr &#x3D; ptr-&gt;next;<br>      }<br>      printf(“%d\n”,ptr-&gt;num);<br>  }</li>
 </ul>
 </li>
 <li><h1 id="队列（初始化，入队，出队，遍历等，和栈基本类似）"><a href="#队列（初始化，入队，出队，遍历等，和栈基本类似）" class="headerlink" title="队列（初始化，入队，出队，遍历等，和栈基本类似）"></a>队列（初始化，入队，出队，遍历等，和栈基本类似）</h1><ul>
-<li><h3 id="使用数组来写队列未免太过绿色，这里采用链表的办法来理解列表，事实上代码都在链表节中实现了，只需要限定哪一端出哪一端入即可，复杂的讨论不在这里进行。"><a href="#使用数组来写队列未免太过绿色，这里采用链表的办法来理解列表，事实上代码都在链表节中实现了，只需要限定哪一端出哪一端入即可，复杂的讨论不在这里进行。" class="headerlink" title="使用数组来写队列未免太过绿色，这里采用链表的办法来理解列表，事实上代码都在链表节中实现了，只需要限定哪一端出哪一端入即可，复杂的讨论不在这里进行。"></a>使用数组来写队列未免太过绿色，这里采用链表的办法来理解列表，事实上代码都在链表节中实现了，只需要限定哪一端出哪一端入即可，复杂的讨论不在这里进行。</h3></li>
+<li>使用数组来写队列未免太过绿色，这里采用链表的办法来理解列表，事实上代码都在链表节中实现了，只需要限定哪一端出哪一端入即可，复杂的讨论不在这里进行。</li>
 </ul>
 </li>
-<li><h2 id="这一篇博客就这样结束吧，进入下一篇了，本彩笔爬走。"><a href="#这一篇博客就这样结束吧，进入下一篇了，本彩笔爬走。" class="headerlink" title="这一篇博客就这样结束吧，进入下一篇了，本彩笔爬走。"></a>这一篇博客就这样结束吧，进入下一篇了，本彩笔爬走。</h2></li>
+<li>这一篇博客就这样结束吧，进入下一篇了，本彩笔爬走。</li>
 </ul>
 
     </div>
@@ -528,7 +370,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%A8C%E8%AF%AD%E8%A8%80%E5%AE%9E%E7%8E%B0%E7%AE%80%E5%8D%95%E7%9A%84%E7%BA%BF%E6%80%A7%E8%A1%A8%E7%BB%93%E6%9E%84"><span class="nav-number">1.</span> <span class="nav-text">用C语言实现简单的线性表结构</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E7%BB%84%EF%BC%88%E6%8F%92%E5%80%BC%EF%BC%8C%E5%88%A0%E9%99%A4%EF%BC%8C%E6%94%B9%E5%80%BC%EF%BC%8C%E6%9F%A5%E5%80%BC%EF%BC%8C%E9%81%8D%E5%8E%86%E7%AD%89%EF%BC%89"><span class="nav-number"></span> <span class="nav-text">数组（插值，删除，改值，查值，遍历等）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#C%E8%AF%AD%E8%A8%80%E4%B8%AD%EF%BC%8C%E5%AE%9A%E4%B9%89%E4%B8%80%E4%B8%AA%E6%95%B0%E7%BB%84%E6%98%AF%E5%BE%88%E7%AE%80%E5%8D%95%E7%9A%84%E3%80%82%E5%AE%9A%E4%B9%89%E4%B8%80%E4%B8%AA%E6%BB%A1%E8%B6%B3%E9%A2%98%E6%84%8F%E7%9A%84%E9%9D%99%E6%80%81%E6%95%B0%E7%BB%84%E5%8F%AF%E4%BB%A5%E7%94%A8%E5%A6%82%E4%B8%8B%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0%E3%80%82"><span class="nav-number">1.</span> <span class="nav-text">C语言中，定义一个数组是很简单的。定义一个满足题意的静态数组可以用如下代码实现。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#C%E8%AF%AD%E8%A8%80%E4%B8%AD%E4%B9%9F%E5%8F%AF%E4%BB%A5%E4%BD%BF%E7%94%A8malloc-calloc%E5%92%8Crealloc%E5%AE%9E%E7%8E%B0%E5%8A%A8%E6%80%81%E6%95%B0%E7%BB%84%E7%9A%84%E6%95%88%E6%9E%9C%EF%BC%8C%E4%B8%8B%E9%9D%A2%E6%98%AF%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0%E3%80%82%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E6%98%AF%EF%BC%8C%E8%BF%99%E7%A7%8D%E6%96%B9%E5%BC%8F%E5%AE%9A%E4%B9%89%E7%9A%84%E6%95%B0%E7%BB%84%E9%9C%80%E8%A6%81%E5%9C%A8%E7%A8%8B%E5%BA%8F%E6%9C%AB%E5%B0%BE%E8%BF%9B%E8%A1%8Cfree%E6%93%8D%E4%BD%9C%E9%87%8A%E6%94%BE%E8%A2%AB%E5%88%86%E9%85%8D%E7%9A%84%E5%86%85%E5%AD%98%E3%80%82"><span class="nav-number">2.</span> <span class="nav-text">C语言中也可以使用malloc,calloc和realloc实现动态数组的效果，下面是代码实现。需要注意的是，这种方式定义的数组需要在程序末尾进行free操作释放被分配的内存。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B9%9F%E5%8F%AF%E4%BB%A5%E4%BB%A5%E4%B8%8B%E9%9D%A2%E4%B8%80%E7%A7%8D%E5%BD%A2%E5%BC%8F%E5%AE%9A%E4%B9%89%E6%9F%94%E6%80%A7%E6%95%B0%E7%BB%84%E3%80%82%E8%BF%99%E7%A7%8D%E6%95%B0%E7%BB%84%E7%BB%93%E6%9E%84%E8%A6%81%E6%B1%82%E4%B8%80%E4%B8%AA%E7%BB%93%E6%9E%84%E4%BD%93%EF%BC%8C%E7%BB%93%E6%9E%84%E4%BD%93%E4%B8%AD%E6%95%B0%E7%BB%84%E6%88%90%E5%91%98%E5%BF%85%E9%A1%BB%E5%A4%84%E4%BA%8E%E4%BB%BB%E6%84%8F%E5%85%B6%E4%BB%96%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%88%90%E5%91%98%E4%B9%8B%E5%90%8E%EF%BC%8C%E4%B8%94%E6%95%B0%E7%BB%84%E6%88%90%E5%91%98%E9%9C%80%E8%A6%81%E7%BD%AE%E4%BA%8E%E7%BB%93%E6%9E%84%E4%BD%93%E6%9C%AB%E5%B0%BE%E3%80%82%E5%AE%9A%E4%B9%89%E5%AE%8C%E6%88%90%E5%90%8E%EF%BC%8C%E4%BD%BF%E7%94%A8sizeof-%E7%BB%93%E6%9E%84%E5%90%8D-%E6%89%80%E8%BF%94%E5%9B%9E%E7%9A%84%E5%86%85%E5%AD%98%E4%B8%8D%E5%8C%85%E5%90%AB%E6%95%B0%E7%BB%84%E5%86%85%E5%AD%98%EF%BC%8C%E8%BF%99%E7%A7%8D%E6%96%B9%E6%B3%95%E7%9B%B8%E6%AF%94%E5%8A%A8%E6%80%81%E6%95%B0%E7%BB%84%E7%9A%84%E4%BC%98%E5%8A%BF%E5%9C%A8%E4%BA%8E%E8%AE%BF%E9%97%AE%E6%95%88%E7%8E%87%E6%9B%B4%E9%AB%98%E4%B8%80%E7%82%B9%E3%80%82"><span class="nav-number">3.</span> <span class="nav-text">也可以以下面一种形式定义柔性数组。这种数组结构要求一个结构体，结构体中数组成员必须处于任意其他数据类型的成员之后，且数组成员需要置于结构体末尾。定义完成后，使用sizeof(结构名)所返回的内存不包含数组内存，这种方法相比动态数组的优势在于访问效率更高一点。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%92%E5%85%A5%E5%92%8C%E5%88%A0%E9%99%A4%E7%9A%84%E6%93%8D%E4%BD%9C%E6%9C%AC%E8%B4%A8%E4%B8%8A%E6%98%AF%E4%B8%80%E6%A0%B7%E7%9A%84%EF%BC%8C%E9%83%BD%E6%B6%89%E5%8F%8A%E5%88%B0%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0%E7%9A%84%E4%BD%8D%E7%BD%AE%E7%A7%BB%E5%8A%A8%EF%BC%8C%E8%BF%99%E9%87%8C%E5%B0%B1%E5%8F%AA%E8%AE%A8%E8%AE%BA%E6%8F%92%E5%85%A5%E5%80%BC%E7%9A%84%E6%93%8D%E4%BD%9C%E3%80%82%E6%AF%94%E5%A6%82%E8%AF%B4%E6%88%91%E8%A6%81%E5%B0%8621%E8%BF%99%E4%B8%AA%E6%95%B0%E5%AD%97%E6%8F%92%E5%85%A5%E7%AC%AC%E4%B8%83%E4%B8%AA%E4%BD%8D%E7%BD%AE%E3%80%82"><span class="nav-number">4.</span> <span class="nav-text">插入和删除的操作本质上是一样的，都涉及到数组元素的位置移动，这里就只讨论插入值的操作。比如说我要将21这个数字插入第七个位置。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%A8%E4%B8%8A%E9%9D%A2%E7%9A%84%E4%BB%A3%E7%A0%81%E4%B8%AD%E5%8F%AF%E4%BB%A5%E7%9C%8B%E5%87%BA%EF%BC%8C%E9%9D%99%E6%80%81%E6%95%B0%E7%BB%84%E7%9A%84%E6%8F%92%E5%85%A5%E6%93%8D%E4%BD%9C%E4%B8%8D%E5%A4%9F%E6%96%B9%E4%BE%BF%EF%BC%8C%E5%8A%A8%E6%80%81%E6%95%B0%E7%BB%84%E5%92%8C%E6%9F%94%E6%80%A7%E6%95%B0%E7%BB%84%E6%89%80%E9%87%87%E7%94%A8%E7%9A%84%E6%96%B9%E6%B3%95%E5%9F%BA%E6%9C%AC%E7%B1%BB%E4%BC%BC%E3%80%82"><span class="nav-number">5.</span> <span class="nav-text">在上面的代码中可以看出，静态数组的插入操作不够方便，动态数组和柔性数组所采用的方法基本类似。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%A8%E7%9F%A5%E9%81%93%E9%9C%80%E8%A6%81%E6%9B%B4%E6%94%B9%E7%9A%84%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0%E7%9A%84%E7%B4%A2%E5%BC%95%E7%9A%84%E6%83%85%E5%86%B5%E4%B8%8B%E5%8F%AF%E4%BB%A5%E7%9B%B4%E6%8E%A5%E5%AF%B9%E5%80%BC%E8%BF%9B%E8%A1%8C%E6%9B%B4%E6%94%B9%EF%BC%8C%E6%9F%A5%E5%80%BC%E5%88%99%E5%8F%AA%E9%9C%80%E8%A6%81%E4%B8%80%E4%B8%AA%E9%81%8D%E5%8E%86%E6%93%8D%E4%BD%9C%E5%B0%B1%E5%8F%AF%E5%AE%9E%E7%8E%B0%EF%BC%8C%E8%BF%99%E9%87%8C%E4%B9%9F%E4%B8%8D%E5%86%8D%E8%B5%98%E8%BF%B0%E3%80%82"><span class="nav-number">6.</span> <span class="nav-text">在知道需要更改的数组元素的索引的情况下可以直接对值进行更改，查值则只需要一个遍历操作就可实现，这里也不再赘述。</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A0%88%EF%BC%88%E5%88%9B%E6%A0%88%EF%BC%8C%E5%85%A5%E6%A0%88%EF%BC%8C%E5%87%BA%E6%A0%88%EF%BC%8C%E9%81%8D%E5%8E%86%EF%BC%8C%E5%88%A4%E6%96%AD%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA%EF%BC%8C%E5%88%A4%E6%96%AD%E6%98%AF%E5%90%A6%E6%BB%A1%E6%A0%88%EF%BC%8C%E6%B8%85%E7%A9%BA%E6%A0%88%EF%BC%89"><span class="nav-number"></span> <span class="nav-text">栈（创栈，入栈，出栈，遍历，判断是否为空，判断是否满栈，清空栈）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%88%E6%98%AF%E4%B8%80%E7%A7%8D%E6%93%8D%E4%BD%9C%E5%8F%97%E9%99%90%E7%9A%84%E7%BA%BF%E6%80%A7%E8%A1%A8%EF%BC%8C%E5%85%B6%E6%98%AF%E4%B8%80%E7%A7%8D%E5%8F%AA%E5%85%81%E8%AE%B8%E5%9C%A8%E4%B8%80%E7%AB%AF%E8%BF%9B%E8%A1%8C%E6%8F%92%E5%85%A5%E6%88%96%E5%88%A0%E9%99%A4%E7%9A%84%E7%BA%BF%E6%80%A7%E8%A1%A8%EF%BC%8C%E6%A0%B9%E6%8D%AE%E8%BF%99%E4%B8%AA%E5%AE%9A%E4%B9%89%E6%88%91%E4%BB%AC%E5%8F%AF%E4%BB%A5%E7%BC%96%E5%86%99%E5%A6%82%E4%B8%8B%E4%BB%A3%E7%A0%81%E3%80%82%E8%BF%99%E9%87%8C%E5%AE%9A%E4%B9%89%E8%BF%99%E4%B8%AA%E6%A0%88%E6%9C%8920%E4%B8%AA%E5%85%83%E7%B4%A0%E3%80%82%EF%BC%88%E8%BF%99%E9%87%8C%E5%85%88%E4%B8%8D%E8%BF%9B%E8%A1%8C%E6%A0%88%E7%9A%84%E6%8B%93%E5%B1%95%EF%BC%8C%E5%8F%AA%E7%BB%99%E5%87%BA%E6%9C%80%E5%9F%BA%E6%9C%AC%E7%9A%84%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0%EF%BC%89"><span class="nav-number">1.</span> <span class="nav-text">栈是一种操作受限的线性表，其是一种只允许在一端进行插入或删除的线性表，根据这个定义我们可以编写如下代码。这里定义这个栈有20个元素。（这里先不进行栈的拓展，只给出最基本的代码实现）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%99%E6%A0%B7%E5%AE%9A%E4%B9%89%E7%9A%84%E6%A0%88%E5%88%9D%E5%A7%8B%E5%8C%96%E5%BE%88%E7%AE%80%E5%8D%95-%E5%B0%86%E5%80%BC%E6%B8%85%E7%90%86%E4%B8%BA0"><span class="nav-number">2.</span> <span class="nav-text">这样定义的栈初始化很简单,将值清理为0</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%A5%E6%A0%88"><span class="nav-number">3.</span> <span class="nav-text">入栈</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%87%BA%E6%A0%88"><span class="nav-number">4.</span> <span class="nav-text">出栈</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%81%8D%E5%8E%86"><span class="nav-number">5.</span> <span class="nav-text">遍历</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%A4%E6%96%AD%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA%E6%88%96%E8%80%85%E4%B8%BA%E6%BB%A1%E6%88%96%E8%80%85%E6%B8%85%E7%A9%BA%E5%9C%A8%E8%BF%99%E9%87%8C%E4%B8%8D%E5%81%9A%E8%B5%98%E8%BF%B0"><span class="nav-number">6.</span> <span class="nav-text">判断是否为空或者为满或者清空在这里不做赘述</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%93%BE%E8%A1%A8%EF%BC%88%E5%88%9D%E5%A7%8B%E5%8C%96%EF%BC%8C%E6%8F%92%E5%80%BC%EF%BC%8C%E5%88%A0%E5%80%BC%EF%BC%8C%E6%9F%A5%E6%94%B9%E5%80%BC%EF%BC%8C%E9%81%8D%E5%8E%86%EF%BC%8C%E5%86%85%E5%AD%98%E9%87%8A%E6%94%BE%E7%AD%89%EF%BC%89%EF%BC%88%E8%BF%99%E9%87%8C%E4%BB%A5%E5%8D%95%E9%93%BE%E8%A1%A8%E5%81%9A%E7%A4%BA%E8%8C%83%EF%BC%89"><span class="nav-number"></span> <span class="nav-text">链表（初始化，插值，删值，查改值，遍历，内存释放等）（这里以单链表做示范）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%93%BE%E8%A1%A8%E7%9A%84%E5%88%9D%E5%A7%8B%E5%8C%96%E5%8C%85%E5%90%AB%E4%B8%89%E4%B8%AA%E9%83%A8%E5%88%86%EF%BC%8C%E5%9B%A0%E4%B8%BA%E7%BB%93%E6%9E%84%E4%B8%8A%E9%93%BE%E8%A1%A8%E5%8C%85%E5%90%AB%E4%B8%80%E4%B8%AA%E5%A4%B4%E8%8A%82%E7%82%B9%EF%BC%8C%E4%B8%80%E4%B8%AA%E5%B0%BE%E8%8A%82%E7%82%B9%E5%92%8C%E5%A4%9A%E4%B8%AA%E4%B8%AD%E9%97%B4%E8%8A%82%E7%82%B9%EF%BC%88%E4%B9%9F%E5%8F%AF%E4%BB%A5%E6%B2%A1%E6%9C%89%EF%BC%89%EF%BC%8C%E6%AF%8F%E7%A7%8D%E8%8A%82%E7%82%B9%E5%9D%87%E9%9C%80%E8%A6%81%E5%88%86%E9%85%8D%E5%86%85%E5%AD%98%E5%92%8C%E5%88%9D%E5%A7%8B%E5%8C%96%EF%BC%8C%E5%90%8C%E6%97%B6%E8%8A%82%E7%82%B9%E5%86%85%E9%83%A8%E6%8C%87%E9%92%88%E6%8C%87%E5%90%91%E4%B8%8D%E5%90%8C%EF%BC%8C%E8%BF%99%E9%87%8C%E5%85%88%E5%AE%9A%E4%B9%89%E4%B8%80%E4%B8%AA%E7%BB%93%E6%9E%84%E4%BD%93%E3%80%82"><span class="nav-number">1.</span> <span class="nav-text">链表的初始化包含三个部分，因为结构上链表包含一个头节点，一个尾节点和多个中间节点（也可以没有），每种节点均需要分配内存和初始化，同时节点内部指针指向不同，这里先定义一个结构体。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8E%A5%E4%B8%8B%E6%9D%A5%E6%98%AF%E5%88%9D%E5%A7%8B%E5%8C%96%EF%BC%8C%E5%87%BD%E6%95%B0%E5%8A%9F%E8%83%BD%E4%B8%BA%E8%BE%93%E5%85%A5%E4%B8%80%E4%B8%AA%E6%95%B0%E5%AD%97%EF%BC%8C%E8%BF%94%E5%9B%9E%E4%B8%80%E4%B8%AA%E5%AD%98%E5%82%A8%E8%AF%A5%E6%95%B0%E6%8D%AE%E7%9A%84%EF%BC%8C%E6%B2%A1%E6%9C%89%E6%8C%87%E5%90%91%E4%BB%BB%E4%BD%95%E5%85%B6%E4%BB%96%E8%8A%82%E7%82%B9%E7%9A%84%E8%8A%82%E7%82%B9%E6%8C%87%E9%92%88%E3%80%82"><span class="nav-number">2.</span> <span class="nav-text">接下来是初始化，函数功能为输入一个数字，返回一个存储该数据的，没有指向任何其他节点的节点指针。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8E%A5%E4%B8%8B%E6%9D%A5%E6%98%AF%E6%8F%92%E5%85%A5%E8%8A%82%E7%82%B9%EF%BC%8C%E6%9C%89%E4%B8%89%E7%A7%8D%E6%8F%92%E5%85%A5%E6%96%B9%E5%BC%8F%EF%BC%8C%E5%88%86%E5%88%AB%E4%B8%BA%E5%A4%B4%E9%83%A8%E6%8F%92%E5%85%A5%EF%BC%8C%E4%B8%AD%E9%97%B4%E6%8F%92%E5%85%A5%E5%92%8C%E5%B0%BE%E9%83%A8%E6%8F%92%E5%85%A5%E3%80%82"><span class="nav-number">3.</span> <span class="nav-text">接下来是插入节点，有三种插入方式，分别为头部插入，中间插入和尾部插入。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%B4%E6%8F%92%E5%87%BD%E6%95%B0%E9%9C%80%E8%A6%81%E4%B8%A4%E4%B8%AA%E5%8F%82%E6%95%B0%EF%BC%8C%E7%AC%AC%E4%B8%80%E4%B8%AA%E6%98%AF%E5%A4%B4%E8%8A%82%E7%82%B9%E7%9A%84%E6%8C%87%E9%92%88%EF%BC%8C%E7%AC%AC%E4%BA%8C%E4%B8%AA%E6%98%AF%E9%9C%80%E8%A6%81%E6%8F%92%E5%85%A5%E7%9A%84%E8%8A%82%E7%82%B9%E7%9A%84%E6%8C%87%E9%92%88%E3%80%82%E5%87%BD%E6%95%B0%E8%BF%94%E5%9B%9E%E6%95%B4%E6%95%B0%E3%80%82"><span class="nav-number">4.</span> <span class="nav-text">头插函数需要两个参数，第一个是头节点的指针，第二个是需要插入的节点的指针。函数返回整数。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%BE%E6%8F%92%E5%87%BD%E6%95%B0%E9%9C%80%E8%A6%81%E4%B8%A4%E4%B8%AA%E5%8F%82%E6%95%B0%EF%BC%8C%E4%B8%80%E4%B8%AA%E6%98%AF%E5%A4%B4%E8%8A%82%E7%82%B9%E7%9A%84%E6%8C%87%E9%92%88%EF%BC%8C%E7%AC%AC%E4%BA%8C%E4%B8%AA%E6%98%AF%E9%9C%80%E8%A6%81%E6%8F%92%E5%85%A5%E7%9A%84%E8%8A%82%E7%82%B9%E7%9A%84%E6%8C%87%E9%92%88%E3%80%82%E5%87%BD%E6%95%B0%E6%97%A0%E8%BF%94%E5%9B%9E%E5%80%BC%E3%80%82"><span class="nav-number">5.</span> <span class="nav-text">尾插函数需要两个参数，一个是头节点的指针，第二个是需要插入的节点的指针。函数无返回值。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%92%E5%85%A5%E5%87%BD%E6%95%B0%E5%B0%86%E6%8A%8A%E8%8A%82%E7%82%B9%E6%8F%92%E5%85%A5%E5%88%B0%E5%8E%9F%E8%8A%82%E7%82%B9%E5%90%8E%E6%96%B9%EF%BC%8C%E9%9C%80%E8%A6%81%E4%B8%A4%E4%B8%AA%E5%8F%82%E6%95%B0%EF%BC%8C%E4%B8%80%E4%B8%AA%E6%98%AF%E5%8E%9F%E8%8A%82%E7%82%B9%EF%BC%8C%E4%B8%80%E4%B8%AA%E6%98%AF%E6%8F%92%E5%85%A5%E7%9A%84%E8%8A%82%E7%82%B9%E3%80%82%E5%87%BD%E6%95%B0%E6%97%A0%E8%BF%94%E5%9B%9E%E5%80%BC%EF%BC%8C%E8%AF%A5%E5%87%BD%E6%95%B0%E5%9C%A8%E7%9F%A5%E6%99%93%E5%B0%BE%E8%8A%82%E7%82%B9%E6%8C%87%E9%92%88%E6%97%B6%E4%B9%9F%E5%8F%AF%E7%9B%B4%E6%8E%A5%E5%81%9A%E5%B0%BE%E6%8F%92%E6%93%8D%E4%BD%9C%E3%80%82"><span class="nav-number">6.</span> <span class="nav-text">插入函数将把节点插入到原节点后方，需要两个参数，一个是原节点，一个是插入的节点。函数无返回值，该函数在知晓尾节点指针时也可直接做尾插操作。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E5%87%BD%E6%95%B0%E8%A6%81%E6%B1%82%E4%BC%A0%E5%85%A5%E9%93%BE%E8%A1%A8%E5%A4%B4%E8%8A%82%E7%82%B9%E5%92%8C%E4%B8%80%E4%B8%AA%E9%9C%80%E8%A6%81%E4%BB%8E%E8%A1%A8%E4%B8%AD%E5%88%A0%E9%99%A4%E7%9A%84%E6%95%B0%E6%8D%AE%EF%BC%8C%E6%97%A0%E8%BF%94%E5%9B%9E%E5%80%BC%E3%80%82%E6%B3%A8%E6%84%8F%E8%AF%A5%E5%87%BD%E6%95%B0%E6%B2%A1%E6%9C%89%E5%B0%86%E8%8A%82%E7%82%B9free%EF%BC%8C%E4%B9%9F%E5%B0%B1%E6%98%AF%E8%AF%B4%E5%85%B6%E7%9B%B8%E5%BD%93%E4%BA%8E%E5%B0%86%E8%8A%82%E7%82%B9%E4%BB%8E%E9%93%BE%E8%A1%A8%E4%B8%AD%E7%A7%BB%E9%99%A4%E4%BA%86%E3%80%82"><span class="nav-number">7.</span> <span class="nav-text">删除函数要求传入链表头节点和一个需要从表中删除的数据，无返回值。注意该函数没有将节点free，也就是说其相当于将节点从链表中移除了。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9F%A5%E6%94%B9%E5%80%BC%E5%92%8C%E9%81%8D%E5%8E%86%E4%B8%8E%E4%B8%8A%E9%9D%A2%E7%B1%BB%E4%BC%BC%EF%BC%8C%E8%BF%99%E9%87%8C%E8%B4%B4%E4%B8%80%E4%B8%AA%E9%81%8D%E5%8E%86%EF%BC%8C%E8%BE%93%E5%87%BA%E4%BC%A0%E5%85%A5%E8%8A%82%E7%82%B9%E4%B9%8B%E5%90%8E%E7%9A%84%E6%89%80%E6%9C%89%E8%8A%82%E7%82%B9%E5%80%BC%EF%BC%8C%E5%BD%93%E8%8A%82%E7%82%B9%E4%B8%BA%E5%A4%B4%E6%97%B6%E8%BE%93%E5%87%BA%E9%93%BE%E8%A1%A8%E5%86%85%E5%80%BC%E3%80%82"><span class="nav-number">8.</span> <span class="nav-text">查改值和遍历与上面类似，这里贴一个遍历，输出传入节点之后的所有节点值，当节点为头时输出链表内值。</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%98%9F%E5%88%97%EF%BC%88%E5%88%9D%E5%A7%8B%E5%8C%96%EF%BC%8C%E5%85%A5%E9%98%9F%EF%BC%8C%E5%87%BA%E9%98%9F%EF%BC%8C%E9%81%8D%E5%8E%86%E7%AD%89%EF%BC%8C%E5%92%8C%E6%A0%88%E5%9F%BA%E6%9C%AC%E7%B1%BB%E4%BC%BC%EF%BC%89"><span class="nav-number"></span> <span class="nav-text">队列（初始化，入队，出队，遍历等，和栈基本类似）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E6%95%B0%E7%BB%84%E6%9D%A5%E5%86%99%E9%98%9F%E5%88%97%E6%9C%AA%E5%85%8D%E5%A4%AA%E8%BF%87%E7%BB%BF%E8%89%B2%EF%BC%8C%E8%BF%99%E9%87%8C%E9%87%87%E7%94%A8%E9%93%BE%E8%A1%A8%E7%9A%84%E5%8A%9E%E6%B3%95%E6%9D%A5%E7%90%86%E8%A7%A3%E5%88%97%E8%A1%A8%EF%BC%8C%E4%BA%8B%E5%AE%9E%E4%B8%8A%E4%BB%A3%E7%A0%81%E9%83%BD%E5%9C%A8%E9%93%BE%E8%A1%A8%E8%8A%82%E4%B8%AD%E5%AE%9E%E7%8E%B0%E4%BA%86%EF%BC%8C%E5%8F%AA%E9%9C%80%E8%A6%81%E9%99%90%E5%AE%9A%E5%93%AA%E4%B8%80%E7%AB%AF%E5%87%BA%E5%93%AA%E4%B8%80%E7%AB%AF%E5%85%A5%E5%8D%B3%E5%8F%AF%EF%BC%8C%E5%A4%8D%E6%9D%82%E7%9A%84%E8%AE%A8%E8%AE%BA%E4%B8%8D%E5%9C%A8%E8%BF%99%E9%87%8C%E8%BF%9B%E8%A1%8C%E3%80%82"><span class="nav-number">1.</span> <span class="nav-text">使用数组来写队列未免太过绿色，这里采用链表的办法来理解列表，事实上代码都在链表节中实现了，只需要限定哪一端出哪一端入即可，复杂的讨论不在这里进行。</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%99%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E5%B0%B1%E8%BF%99%E6%A0%B7%E7%BB%93%E6%9D%9F%E5%90%A7%EF%BC%8C%E8%BF%9B%E5%85%A5%E4%B8%8B%E4%B8%80%E7%AF%87%E4%BA%86%EF%BC%8C%E6%9C%AC%E5%BD%A9%E7%AC%94%E7%88%AC%E8%B5%B0%E3%80%82"><span class="nav-number"></span> <span class="nav-text">这一篇博客就这样结束吧，进入下一篇了，本彩笔爬走。</span></a></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E7%BB%84%EF%BC%88%E6%8F%92%E5%80%BC%EF%BC%8C%E5%88%A0%E9%99%A4%EF%BC%8C%E6%94%B9%E5%80%BC%EF%BC%8C%E6%9F%A5%E5%80%BC%EF%BC%8C%E9%81%8D%E5%8E%86%E7%AD%89%EF%BC%89"><span class="nav-number">1.</span> <span class="nav-text">数组（插值，删除，改值，查值，遍历等）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A0%88%EF%BC%88%E5%88%9B%E6%A0%88%EF%BC%8C%E5%85%A5%E6%A0%88%EF%BC%8C%E5%87%BA%E6%A0%88%EF%BC%8C%E9%81%8D%E5%8E%86%EF%BC%8C%E5%88%A4%E6%96%AD%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA%EF%BC%8C%E5%88%A4%E6%96%AD%E6%98%AF%E5%90%A6%E6%BB%A1%E6%A0%88%EF%BC%8C%E6%B8%85%E7%A9%BA%E6%A0%88%EF%BC%89"><span class="nav-number">2.</span> <span class="nav-text">栈（创栈，入栈，出栈，遍历，判断是否为空，判断是否满栈，清空栈）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%93%BE%E8%A1%A8%EF%BC%88%E5%88%9D%E5%A7%8B%E5%8C%96%EF%BC%8C%E6%8F%92%E5%80%BC%EF%BC%8C%E5%88%A0%E5%80%BC%EF%BC%8C%E6%9F%A5%E6%94%B9%E5%80%BC%EF%BC%8C%E9%81%8D%E5%8E%86%EF%BC%8C%E5%86%85%E5%AD%98%E9%87%8A%E6%94%BE%E7%AD%89%EF%BC%89%EF%BC%88%E8%BF%99%E9%87%8C%E4%BB%A5%E5%8D%95%E9%93%BE%E8%A1%A8%E5%81%9A%E7%A4%BA%E8%8C%83%EF%BC%89"><span class="nav-number">3.</span> <span class="nav-text">链表（初始化，插值，删值，查改值，遍历，内存释放等）（这里以单链表做示范）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%98%9F%E5%88%97%EF%BC%88%E5%88%9D%E5%A7%8B%E5%8C%96%EF%BC%8C%E5%85%A5%E9%98%9F%EF%BC%8C%E5%87%BA%E9%98%9F%EF%BC%8C%E9%81%8D%E5%8E%86%E7%AD%89%EF%BC%8C%E5%92%8C%E6%A0%88%E5%9F%BA%E6%9C%AC%E7%B1%BB%E4%BC%BC%EF%BC%89"><span class="nav-number">4.</span> <span class="nav-text">队列（初始化，入队，出队，遍历等，和栈基本类似）</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -544,7 +386,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-count">10</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
