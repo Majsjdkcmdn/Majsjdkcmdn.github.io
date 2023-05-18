@@ -20,30 +20,33 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"hide","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="一起加油吧">
-<meta property="og:type" content="website">
-<meta property="og:title" content="MJD&#39;s Blog">
-<meta property="og:url" content="http://example.com/default-index/index.html">
+  <meta name="description" content="本篇博客讨论的是数据结构中的线性表 线性表的定义 线性表是数据结构的一种，一个线性表指的是零到n个数据元素的有限序列，其中的元素都有一个确定的位置，数据元素之间是一对一的关系。线性与否的判别标准是逻辑层次上的，而非存储层次上的。 线性表具有下面几种结构特点：1. 均匀性：虽然不同数据表的数据元素可以是各种各样的，但对于同一线性表的各数据元素必定具有相同的数据类型和长度。2. 有序性：各数据元素在线">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据结构（1）">
+<meta property="og:url" content="http://example.com/2023/05/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%881%EF%BC%89/index.html">
 <meta property="og:site_name" content="MJD&#39;s Blog">
-<meta property="og:description" content="一起加油吧">
+<meta property="og:description" content="本篇博客讨论的是数据结构中的线性表 线性表的定义 线性表是数据结构的一种，一个线性表指的是零到n个数据元素的有限序列，其中的元素都有一个确定的位置，数据元素之间是一对一的关系。线性与否的判别标准是逻辑层次上的，而非存储层次上的。 线性表具有下面几种结构特点：1. 均匀性：虽然不同数据表的数据元素可以是各种各样的，但对于同一线性表的各数据元素必定具有相同的数据类型和长度。2. 有序性：各数据元素在线">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-05-01T12:06:15.000Z">
+<meta property="article:modified_time" content="2023-05-18T02:47:56.859Z">
 <meta property="article:author" content="Majsjdkcmdn">
+<meta property="article:tag" content="数据结构">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/default-index/">
+<link rel="canonical" href="http://example.com/2023/05/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%881%EF%BC%89/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>MJD's Blog</title>
+  <title>数据结构（1） | MJD's Blog</title>
   
 
 
@@ -179,646 +182,10 @@
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content post posts-expand">
             
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/05/07/%EF%BC%88asm%EF%BC%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%88%9D%E6%AD%A5%EF%BC%881%EF%BC%89/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Majsjdkcmdn">
-      <meta itemprop="description" content="一起加油吧">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="MJD's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/05/07/%EF%BC%88asm%EF%BC%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%88%9D%E6%AD%A5%EF%BC%881%EF%BC%89/" class="post-title-link" itemprop="url">（asm）数据结构初步（1）</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2023-05-07 16:24:23" itemprop="dateCreated datePublished" datetime="2023-05-07T16:24:23+08:00">2023-05-07</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-05-04 16:24:48" itemprop="dateModified" datetime="2023-05-04T16:24:48+08:00">2023-05-04</time>
-              </span>
-
-          
-
-        </div>
-      </header>
 
     
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/05/06/%EF%BC%88go%EF%BC%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%88%9D%E6%AD%A5%EF%BC%881%EF%BC%89/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Majsjdkcmdn">
-      <meta itemprop="description" content="一起加油吧">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="MJD's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/05/06/%EF%BC%88go%EF%BC%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%88%9D%E6%AD%A5%EF%BC%881%EF%BC%89/" class="post-title-link" itemprop="url">（go）数据结构初步（1）</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2023-05-06 16:16:46" itemprop="dateCreated datePublished" datetime="2023-05-06T16:16:46+08:00">2023-05-06</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-05-04 16:17:11" itemprop="dateModified" datetime="2023-05-04T16:17:11+08:00">2023-05-04</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/05/05/%EF%BC%88java%EF%BC%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%88%9D%E6%AD%A5%EF%BC%881%EF%BC%89/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Majsjdkcmdn">
-      <meta itemprop="description" content="一起加油吧">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="MJD's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/05/05/%EF%BC%88java%EF%BC%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%88%9D%E6%AD%A5%EF%BC%881%EF%BC%89/" class="post-title-link" itemprop="url">（java）数据结构初步（1）</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2023-05-05 20:01:58" itemprop="dateCreated datePublished" datetime="2023-05-05T20:01:58+08:00">2023-05-05</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-05-03 21:54:03" itemprop="dateModified" datetime="2023-05-03T21:54:03+08:00">2023-05-03</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/05/04/%EF%BC%88python%EF%BC%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%88%9D%E6%AD%A5%EF%BC%881%EF%BC%89/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Majsjdkcmdn">
-      <meta itemprop="description" content="一起加油吧">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="MJD's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/05/04/%EF%BC%88python%EF%BC%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%88%9D%E6%AD%A5%EF%BC%881%EF%BC%89/" class="post-title-link" itemprop="url">（python）数据结构初步（1）</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2023-05-04 20:01:11" itemprop="dateCreated datePublished" datetime="2023-05-04T20:01:11+08:00">2023-05-04</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-05-03 21:53:55" itemprop="dateModified" datetime="2023-05-03T21:53:55+08:00">2023-05-03</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/05/03/%EF%BC%88c-%EF%BC%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%88%9D%E6%AD%A5%EF%BC%881%EF%BC%89/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Majsjdkcmdn">
-      <meta itemprop="description" content="一起加油吧">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="MJD's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/05/03/%EF%BC%88c-%EF%BC%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%88%9D%E6%AD%A5%EF%BC%881%EF%BC%89/" class="post-title-link" itemprop="url">（c++）数据结构初步（1）</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2023-05-03 20:00:59" itemprop="dateCreated datePublished" datetime="2023-05-03T20:00:59+08:00">2023-05-03</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-05-18 10:43:32" itemprop="dateModified" datetime="2023-05-18T10:43:32+08:00">2023-05-18</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/C/" itemprop="url" rel="index"><span itemprop="name">C++</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/C/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="使用C-语言实现简单的线性表结构"><a href="#使用C-语言实现简单的线性表结构" class="headerlink" title="使用C++语言实现简单的线性表结构"></a>使用C++语言实现简单的线性表结构</h3><h3 id="值得一提的是，C-还有几种别的数据容器，比如map，vector等，这里也将一并介绍，与C语言重合度过高的地方我会将其简化，有明显差异的地方则会突出"><a href="#值得一提的是，C-还有几种别的数据容器，比如map，vector等，这里也将一并介绍，与C语言重合度过高的地方我会将其简化，有明显差异的地方则会突出" class="headerlink" title="值得一提的是，C++还有几种别的数据容器，比如map，vector等，这里也将一并介绍，与C语言重合度过高的地方我会将其简化，有明显差异的地方则会突出"></a>值得一提的是，C++还有几种别的数据容器，比如map，vector等，这里也将一并介绍，与C语言重合度过高的地方我会将其简化，有明显差异的地方则会突出</h3><ul>
-<li><h1 id="数组（插值，删除，改值，查值，遍历等）"><a href="#数组（插值，删除，改值，查值，遍历等）" class="headerlink" title="数组（插值，删除，改值，查值，遍历等）"></a>数组（插值，删除，改值，查值，遍历等）</h1><ul>
-<li><h3 id="C-中的数组定义同C一样容易理解，下面是一种常规的数组定义办法"><a href="#C-中的数组定义同C一样容易理解，下面是一种常规的数组定义办法" class="headerlink" title="C++中的数组定义同C一样容易理解，下面是一种常规的数组定义办法"></a>C++中的数组定义同C一样容易理解，下面是一种常规的数组定义办法</h3><pre><code>  int num[10];
-</code></pre>
-</li>
-<li><h3 id="虽然C语言的malloc类语句仍然可以使用，但是C-也拥有自己的特性，即用new来实现分配内存。同C语言类似，这种办法分配的内存需要使用delete进行释放。"><a href="#虽然C语言的malloc类语句仍然可以使用，但是C-也拥有自己的特性，即用new来实现分配内存。同C语言类似，这种办法分配的内存需要使用delete进行释放。" class="headerlink" title="虽然C语言的malloc类语句仍然可以使用，但是C++也拥有自己的特性，即用new来实现分配内存。同C语言类似，这种办法分配的内存需要使用delete进行释放。"></a>虽然C语言的malloc类语句仍然可以使用，但是C++也拥有自己的特性，即用new来实现分配内存。<em>同C语言类似，这种办法分配的内存需要使用delete进行释放。</em></h3><pre><code>  int *num = new int[10];
-  delete []num;
-</code></pre>
-</li>
-<li><h3 id="除此之外，C-还提供了两个容器，一个是array，一个是vector，要使用它们，需要引用头文件，并使用命名空间std。"><a href="#除此之外，C-还提供了两个容器，一个是array，一个是vector，要使用它们，需要引用头文件，并使用命名空间std。" class="headerlink" title="除此之外，C++还提供了两个容器，一个是array，一个是vector，要使用它们，需要引用头文件，并使用命名空间std。"></a>除此之外，C++还提供了两个容器，一个是array，一个是vector，要使用它们，需要引用头文件，并使用命名空间std。</h3><pre><code>  #include &lt;array&gt;
-  #include &lt;vector&gt;
-  using namespace std;
-</code></pre>
-</li>
-<li><h3 id="下面是他们的初始化"><a href="#下面是他们的初始化" class="headerlink" title="下面是他们的初始化"></a>下面是他们的初始化</h3><pre><code>  array1 &lt;int, 10&gt; values;//不对其值进行初始化
-  array2 &lt;int, 10&gt; values &#123;&#125;;//全部初始化为0
-  array3 &lt;int, 10&gt; values &#123;1, 2, 3&#125;;//前三个初始化为相应值，后面的初始化为0
-  //array本质上仍然是静态数组，但其使用上更加安全可靠
-  vector&lt;int&gt; v1;//size为0，空vector且未分配内存
-  vector&lt;int&gt; v2(10);//已分配内存，且初始化为0
-  vector&lt;int&gt; v3 = &#123;1,2,3&#125;;//分配三个int内存，初始化为相应数值
-  vector&lt;int&gt; v4 = v3;//等同于vector(int) v4(v3)，用另一个向量进行初始化
-  vector&lt;int&gt; v5(10,1);//10个都初始化为1
-  //vector类似于C语言的动态数组
-</code></pre>
-</li>
-<li><h3 id="在初始化之外，作为一门面向对象的编程语言，array与vector还有许多高级成员函数，这里暂不讨论，以后需要使用时再讨论"><a href="#在初始化之外，作为一门面向对象的编程语言，array与vector还有许多高级成员函数，这里暂不讨论，以后需要使用时再讨论" class="headerlink" title="在初始化之外，作为一门面向对象的编程语言，array与vector还有许多高级成员函数，这里暂不讨论，以后需要使用时再讨论"></a>在初始化之外，作为一门面向对象的编程语言，array与vector还有许多高级成员函数，这里暂不讨论，以后需要使用时再讨论</h3></li>
-</ul>
-</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/05/02/%EF%BC%88c%EF%BC%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%88%9D%E6%AD%A5%EF%BC%881%EF%BC%89/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Majsjdkcmdn">
-      <meta itemprop="description" content="一起加油吧">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="MJD's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/05/02/%EF%BC%88c%EF%BC%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%88%9D%E6%AD%A5%EF%BC%881%EF%BC%89/" class="post-title-link" itemprop="url">（c）数据结构初步（1）</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2023-05-02 20:00:45" itemprop="dateCreated datePublished" datetime="2023-05-02T20:00:45+08:00">2023-05-02</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-05-18 10:43:48" itemprop="dateModified" datetime="2023-05-18T10:43:48+08:00">2023-05-18</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/C%E8%AF%AD%E8%A8%80/" itemprop="url" rel="index"><span itemprop="name">C语言</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/C%E8%AF%AD%E8%A8%80/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="用C语言实现简单的线性表结构"><a href="#用C语言实现简单的线性表结构" class="headerlink" title="用C语言实现简单的线性表结构"></a>用C语言实现简单的线性表结构</h3><ul>
-<li><h1 id="数组（插值，删除，改值，查值，遍历等）"><a href="#数组（插值，删除，改值，查值，遍历等）" class="headerlink" title="数组（插值，删除，改值，查值，遍历等）"></a>数组（插值，删除，改值，查值，遍历等）</h1><ul>
-<li><h3 id="C语言中，定义一个数组是很简单的。定义一个满足题意的静态数组可以用如下代码实现。"><a href="#C语言中，定义一个数组是很简单的。定义一个满足题意的静态数组可以用如下代码实现。" class="headerlink" title="C语言中，定义一个数组是很简单的。定义一个满足题意的静态数组可以用如下代码实现。"></a>C语言中，定义一个数组是很简单的。定义一个满足题意的<strong>静态数组</strong>可以用如下代码实现。</h3><pre><code>  void DefineStaticArray()&#123;
-      int num[20];
-      for(int i=0; i&lt;20; i++)&#123;
-          num[i] = i+1;
-      &#125;
-  &#125;
-</code></pre>
-</li>
-<li><h3 id="C语言中也可以使用malloc-calloc和realloc实现动态数组的效果，下面是代码实现。需要注意的是，这种方式定义的数组需要在程序末尾进行free操作释放被分配的内存。"><a href="#C语言中也可以使用malloc-calloc和realloc实现动态数组的效果，下面是代码实现。需要注意的是，这种方式定义的数组需要在程序末尾进行free操作释放被分配的内存。" class="headerlink" title="C语言中也可以使用malloc,calloc和realloc实现动态数组的效果，下面是代码实现。需要注意的是，这种方式定义的数组需要在程序末尾进行free操作释放被分配的内存。"></a>C语言中也可以使用malloc,calloc和realloc实现<strong>动态数组</strong>的效果，下面是代码实现。<em>需要注意的是，这种方式定义的数组需要在程序末尾进行free操作释放被分配的内存</em>。</h3><pre><code>  void DefineDynamicArray()&#123;
-      int *num = NULL;
-      num = (int*)malloc(sizeof(int));
-      num = (int*)realloc(num, 20*sizeof(int));
-      //或者采用下面这一行
-      //num = (int*)calloc(20,sizeof(int));
-      for(int i=0; i&lt;20; i++)&#123;
-          *(num+i) = i+1;
-      &#125;
-  &#125;
-</code></pre>
-</li>
-<li><h3 id="也可以以下面一种形式定义柔性数组。这种数组结构要求一个结构体，结构体中数组成员必须处于任意其他数据类型的成员之后，且数组成员需要置于结构体末尾。定义完成后，使用sizeof-结构名-所返回的内存不包含数组内存，这种方法相比动态数组的优势在于访问效率更高一点。"><a href="#也可以以下面一种形式定义柔性数组。这种数组结构要求一个结构体，结构体中数组成员必须处于任意其他数据类型的成员之后，且数组成员需要置于结构体末尾。定义完成后，使用sizeof-结构名-所返回的内存不包含数组内存，这种方法相比动态数组的优势在于访问效率更高一点。" class="headerlink" title="也可以以下面一种形式定义柔性数组。这种数组结构要求一个结构体，结构体中数组成员必须处于任意其他数据类型的成员之后，且数组成员需要置于结构体末尾。定义完成后，使用sizeof(结构名)所返回的内存不包含数组内存，这种方法相比动态数组的优势在于访问效率更高一点。"></a>也可以以下面一种形式定义<strong>柔性数组</strong>。这种数组结构要求一个结构体，结构体中数组成员必须处于任意其他数据类型的成员之后，且数组成员需要置于结构体末尾。定义完成后，使用sizeof(结构名)所返回的内存不包含数组内存，这种方法相比动态数组的优势在于访问效率更高一点。</h3><pre><code>  void DefineFlexibleArray()&#123;
-      typedef struct FlexibleArray&#123;
-          int i;
-          int num[];
-      &#125;FA;
-      FA *fa = (FA*)malloc(sizeof(FA)+20*sizeof(int));
-      fa-&gt;i = 20;
-      for(int i=0;i&lt;20;i++)&#123;
-          fa-&gt;num[i] = i+1;
-      &#125;
-  &#125;
-</code></pre>
-</li>
-<li><h3 id="插入和删除的操作本质上是一样的，都涉及到数组元素的位置移动，这里就只讨论插入值的操作。比如说我要将21这个数字插入第七个位置。"><a href="#插入和删除的操作本质上是一样的，都涉及到数组元素的位置移动，这里就只讨论插入值的操作。比如说我要将21这个数字插入第七个位置。" class="headerlink" title="插入和删除的操作本质上是一样的，都涉及到数组元素的位置移动，这里就只讨论插入值的操作。比如说我要将21这个数字插入第七个位置。"></a>插入和删除的操作本质上是一样的，都涉及到数组元素的位置移动，这里就只讨论插入值的操作。比如说我要将21这个数字插入第七个位置。</h3><pre><code>  void InsertStaticArray(int *num, int *n_num)&#123;
-      for(int i=0;i&lt;6;i++)&#123;
-          n_num[i] = num[i];
-      &#125;
-      n_num[6]=21;
-      for(int i=7;i&lt;21;i++)&#123;
-          n_num[i] = num[i-1];
-      &#125;
-  &#125;//提前定义n_num数组，输出时输出n_num
-
-  void InsertDynamicArray()&#123;
-      num = (int*)realloc(num,21*sizeof(int));
-      for(int i=20;i&gt;6;i--)&#123;
-          *(num+i) = *(num+i-1);
-      &#125;
-      *(num+6) = 21;
-  &#125;
-
-  void InsertFlexibleArray()&#123;
-      fa = (FA*)realloc(fa, sizeof(FA)+21*sizeof(int));
-      for(int i=20;i&gt;6;i--)&#123;
-          fa-&gt;num[i] = fa-&gt;num[i-1];
-      &#125;
-      fa-&gt;num[6] = 21;
-  &#125;
-</code></pre>
-</li>
-<li><h3 id="在上面的代码中可以看出，静态数组的插入操作不够方便，动态数组和柔性数组所采用的方法基本类似。"><a href="#在上面的代码中可以看出，静态数组的插入操作不够方便，动态数组和柔性数组所采用的方法基本类似。" class="headerlink" title="在上面的代码中可以看出，静态数组的插入操作不够方便，动态数组和柔性数组所采用的方法基本类似。"></a>在上面的代码中可以看出，静态数组的插入操作不够方便，动态数组和柔性数组所采用的方法基本类似。</h3></li>
-<li><h3 id="在知道需要更改的数组元素的索引的情况下可以直接对值进行更改，查值则只需要一个遍历操作就可实现，这里也不再赘述。"><a href="#在知道需要更改的数组元素的索引的情况下可以直接对值进行更改，查值则只需要一个遍历操作就可实现，这里也不再赘述。" class="headerlink" title="在知道需要更改的数组元素的索引的情况下可以直接对值进行更改，查值则只需要一个遍历操作就可实现，这里也不再赘述。"></a>在知道需要更改的数组元素的索引的情况下可以直接对值进行更改，查值则只需要一个遍历操作就可实现，这里也不再赘述。</h3></li>
-</ul>
-</li>
-<li><h1 id="栈（创栈，入栈，出栈，遍历，判断是否为空，判断是否满栈，清空栈）"><a href="#栈（创栈，入栈，出栈，遍历，判断是否为空，判断是否满栈，清空栈）" class="headerlink" title="栈（创栈，入栈，出栈，遍历，判断是否为空，判断是否满栈，清空栈）"></a>栈（创栈，入栈，出栈，遍历，判断是否为空，判断是否满栈，清空栈）</h1><ul>
-<li><h3 id="栈是一种操作受限的线性表，其是一种只允许在一端进行插入或删除的线性表，根据这个定义我们可以编写如下代码。这里定义这个栈有20个元素。（这里先不进行栈的拓展，只给出最基本的代码实现）"><a href="#栈是一种操作受限的线性表，其是一种只允许在一端进行插入或删除的线性表，根据这个定义我们可以编写如下代码。这里定义这个栈有20个元素。（这里先不进行栈的拓展，只给出最基本的代码实现）" class="headerlink" title="栈是一种操作受限的线性表，其是一种只允许在一端进行插入或删除的线性表，根据这个定义我们可以编写如下代码。这里定义这个栈有20个元素。（这里先不进行栈的拓展，只给出最基本的代码实现）"></a>栈是一种操作受限的线性表，其是一种只允许在一端进行插入或删除的线性表，根据这个定义我们可以编写如下代码。这里定义这个栈有20个元素。（这里先不进行栈的拓展，只给出最基本的代码实现）</h3><pre><code>  typedef struct SeqStaticStack&#123;
-      int body[20];
-      int top;
-  &#125;Stack;
-</code></pre>
-</li>
-<li><h3 id="这样定义的栈初始化很简单-将值清理为0"><a href="#这样定义的栈初始化很简单-将值清理为0" class="headerlink" title="这样定义的栈初始化很简单,将值清理为0"></a>这样定义的栈初始化很简单,将值清理为0</h3><pre><code>  Stack *ps=(Stack*)malloc(sizeof(Stack));
-  for(int i=0;i&lt;20;i++)&#123;
-      ps-&gt;body[i] = 0;
-  &#125;
-</code></pre>
-</li>
-<li><h3 id="入栈"><a href="#入栈" class="headerlink" title="入栈"></a>入栈</h3><pre><code>  int push(Stack *s, int i)&#123;
-      if(s-&gt;top == 20)
-          return 1;
-      else&#123;
-          s-&gt;body[s-&gt;top] = i;
-          s-&gt;top+=1;
-          return 0;
-      &#125;
-  &#125;
-</code></pre>
-</li>
-<li><h3 id="出栈"><a href="#出栈" class="headerlink" title="出栈"></a>出栈</h3><pre><code>  int pop(Stack *s)&#123;
-      if(s-&gt;top == 0)
-          return 1;
-      else&#123;
-          int i = s-&gt;body[s-&gt;top-1];
-          s-&gt;body[s-&gt;top-1] = 0;
-          s-&gt;top -=1;
-          return i;
-      &#125;
-  &#125;
-</code></pre>
-</li>
-<li><h3 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h3><pre><code>  void travel(Stack *s)&#123;
-      if(s-&gt;top == 0)&#123;
-          printf(&quot;empty\n&quot;);
-      &#125;
-      else&#123;
-          printf(&quot;from bottom:&quot;);
-          for(int i=0;i&lt;s-&gt;top;i++)&#123;
-              printf(&quot;%d\t&quot;,s-&gt;body[i]);
-          &#125;
-      &#125;
-  &#125;;
-</code></pre>
-</li>
-<li><h3 id="判断是否为空或者为满或者清空在这里不做赘述"><a href="#判断是否为空或者为满或者清空在这里不做赘述" class="headerlink" title="判断是否为空或者为满或者清空在这里不做赘述"></a>判断是否为空或者为满或者清空在这里不做赘述</h3></li>
-</ul>
-</li>
-<li><h1 id="链表（初始化，插值，删值，查改值，遍历，内存释放等）（这里以单链表做示范）"><a href="#链表（初始化，插值，删值，查改值，遍历，内存释放等）（这里以单链表做示范）" class="headerlink" title="链表（初始化，插值，删值，查改值，遍历，内存释放等）（这里以单链表做示范）"></a>链表（初始化，插值，删值，查改值，遍历，内存释放等）（这里以单链表做示范）</h1><ul>
-<li><h3 id="链表的初始化包含三个部分，因为结构上链表包含一个头节点，一个尾节点和多个中间节点（也可以没有），每种节点均需要分配内存和初始化，同时节点内部指针指向不同，这里先定义一个结构体。"><a href="#链表的初始化包含三个部分，因为结构上链表包含一个头节点，一个尾节点和多个中间节点（也可以没有），每种节点均需要分配内存和初始化，同时节点内部指针指向不同，这里先定义一个结构体。" class="headerlink" title="链表的初始化包含三个部分，因为结构上链表包含一个头节点，一个尾节点和多个中间节点（也可以没有），每种节点均需要分配内存和初始化，同时节点内部指针指向不同，这里先定义一个结构体。"></a>链表的初始化包含三个部分，因为结构上链表包含一个头节点，一个尾节点和多个中间节点（也可以没有），每种节点均需要分配内存和初始化，同时节点内部指针指向不同，这里先定义一个结构体。</h3><pre><code>  typedef struct LinkedListNode&#123;
-      int num;
-      struct LinkedListNode *NP;
-  &#125;LLN;
-</code></pre>
-</li>
-<li><h3 id="接下来是初始化，函数功能为输入一个数字，返回一个存储该数据的，没有指向任何其他节点的节点指针。"><a href="#接下来是初始化，函数功能为输入一个数字，返回一个存储该数据的，没有指向任何其他节点的节点指针。" class="headerlink" title="接下来是初始化，函数功能为输入一个数字，返回一个存储该数据的，没有指向任何其他节点的节点指针。"></a>接下来是初始化，函数功能为输入一个数字，返回一个存储该数据的，没有指向任何其他节点的节点指针。</h3><pre><code>  LLN *InitNode(int n)&#123;
-      LLN *node;
-      node = (LLN*)malloc(sizeof(LLN));
-      node-&gt;num = n;
-      node-&gt;next = NULL;
-      return node;
-  &#125;
-</code></pre>
-</li>
-<li><h3 id="接下来是插入节点，有三种插入方式，分别为头部插入，中间插入和尾部插入。"><a href="#接下来是插入节点，有三种插入方式，分别为头部插入，中间插入和尾部插入。" class="headerlink" title="接下来是插入节点，有三种插入方式，分别为头部插入，中间插入和尾部插入。"></a>接下来是插入节点，有三种插入方式，分别为头部插入，中间插入和尾部插入。</h3><ul>
-<li><h3 id="头插函数需要两个参数，第一个是头节点的指针，第二个是需要插入的节点的指针。函数返回整数。"><a href="#头插函数需要两个参数，第一个是头节点的指针，第二个是需要插入的节点的指针。函数返回整数。" class="headerlink" title="头插函数需要两个参数，第一个是头节点的指针，第二个是需要插入的节点的指针。函数返回整数。"></a>头插函数需要两个参数，第一个是头节点的指针，第二个是需要插入的节点的指针。函数返回整数。</h3><pre><code>  int HeadInsert(LLN *OHead,LLN *NHead)&#123;
-      NHead-&gt;next = OHead;
-      if(NHead-&gt;next == NULL)&#123;
-          printf(&quot;Failed,head node is still old one\n&quot;);
-          return 1;
-      &#125;
-      printf(&quot;Success,head node is new one\n&quot;);
-      return 0;
-  &#125;
-</code></pre>
-</li>
-<li><h3 id="尾插函数需要两个参数，一个是头节点的指针，第二个是需要插入的节点的指针。函数无返回值。"><a href="#尾插函数需要两个参数，一个是头节点的指针，第二个是需要插入的节点的指针。函数无返回值。" class="headerlink" title="尾插函数需要两个参数，一个是头节点的指针，第二个是需要插入的节点的指针。函数无返回值。"></a>尾插函数需要两个参数，一个是头节点的指针，第二个是需要插入的节点的指针。函数无返回值。</h3><pre><code>  void TailInsert(LLN *Head,LLN *Tail)&#123;
-      LLN *ptr = Head;
-      while(ptr-&gt;next!=NULL)&#123;
-          ptr = ptr-&gt;next;
-      &#125;
-      ptr-&gt;next = Tail;
-  &#125;
-</code></pre>
-</li>
-<li><h3 id="插入函数将把节点插入到原节点后方，需要两个参数，一个是原节点，一个是插入的节点。函数无返回值，该函数在知晓尾节点指针时也可直接做尾插操作。"><a href="#插入函数将把节点插入到原节点后方，需要两个参数，一个是原节点，一个是插入的节点。函数无返回值，该函数在知晓尾节点指针时也可直接做尾插操作。" class="headerlink" title="插入函数将把节点插入到原节点后方，需要两个参数，一个是原节点，一个是插入的节点。函数无返回值，该函数在知晓尾节点指针时也可直接做尾插操作。"></a>插入函数将把节点插入到原节点后方，需要两个参数，一个是原节点，一个是插入的节点。函数无返回值，该函数在知晓尾节点指针时也可直接做尾插操作。</h3><pre><code>  void Insert(LLN *f,LLN *n)&#123;
-      n-&gt;next = f-&gt;next;
-      f-&gt;next = n;
-  &#125;
-</code></pre>
-</li>
-</ul>
-</li>
-<li><h3 id="删除函数要求传入链表头节点和一个需要从表中删除的数据，无返回值。注意该函数没有将节点free，也就是说其相当于将节点从链表中移除了。"><a href="#删除函数要求传入链表头节点和一个需要从表中删除的数据，无返回值。注意该函数没有将节点free，也就是说其相当于将节点从链表中移除了。" class="headerlink" title="删除函数要求传入链表头节点和一个需要从表中删除的数据，无返回值。注意该函数没有将节点free，也就是说其相当于将节点从链表中移除了。"></a>删除函数要求传入链表头节点和一个需要从表中删除的数据，无返回值。注意该函数没有将节点free，也就是说其相当于将节点从链表中移除了。</h3><pre><code>  void Delete(LLN *head, int num)&#123;
-      LLN *ptr = head;
-      LLN *pt = NULL;
-      while(1)&#123;
-          if(ptr-&gt;num!=num)&#123;
-              pt = ptr;
-              ptr = ptr-&gt;next;
-          &#125;
-          else break;
-      &#125;
-      if(pt!=NULL)
-          pt-&gt;next = ptr-&gt;next;
-      ptr-&gt;next = NULL;
-  &#125;
-</code></pre>
-</li>
-<li><h3 id="查改值和遍历与上面类似，这里贴一个遍历，输出传入节点之后的所有节点值，当节点为头时输出链表内值。"><a href="#查改值和遍历与上面类似，这里贴一个遍历，输出传入节点之后的所有节点值，当节点为头时输出链表内值。" class="headerlink" title="查改值和遍历与上面类似，这里贴一个遍历，输出传入节点之后的所有节点值，当节点为头时输出链表内值。"></a>查改值和遍历与上面类似，这里贴一个遍历，输出传入节点之后的所有节点值，当节点为头时输出链表内值。</h3><pre><code>  void travel(LLN *head)&#123;
-      LLN *ptr = head;
-      while(ptr-&gt;next!=NULL)&#123;
-          printf(&quot;%d\t&quot;,ptr-&gt;num);
-          ptr = ptr-&gt;next;
-      &#125;
-      printf(&quot;%d\n&quot;,ptr-&gt;num);
-  &#125;
-</code></pre>
-</li>
-</ul>
-</li>
-<li><h1 id="队列（初始化，入队，出队，遍历等，和栈基本类似）"><a href="#队列（初始化，入队，出队，遍历等，和栈基本类似）" class="headerlink" title="队列（初始化，入队，出队，遍历等，和栈基本类似）"></a>队列（初始化，入队，出队，遍历等，和栈基本类似）</h1><ul>
-<li><h3 id="使用数组来写队列未免太过绿色，这里采用链表的办法来理解列表，事实上代码都在链表节中实现了，只需要限定哪一端出哪一端入即可，复杂的讨论不在这里进行。"><a href="#使用数组来写队列未免太过绿色，这里采用链表的办法来理解列表，事实上代码都在链表节中实现了，只需要限定哪一端出哪一端入即可，复杂的讨论不在这里进行。" class="headerlink" title="使用数组来写队列未免太过绿色，这里采用链表的办法来理解列表，事实上代码都在链表节中实现了，只需要限定哪一端出哪一端入即可，复杂的讨论不在这里进行。"></a>使用数组来写队列未免太过绿色，这里采用链表的办法来理解列表，事实上代码都在链表节中实现了，只需要限定哪一端出哪一端入即可，复杂的讨论不在这里进行。</h3></li>
-</ul>
-</li>
-<li><h2 id="这一篇博客就这样结束吧，进入下一篇了，本彩笔爬走。"><a href="#这一篇博客就这样结束吧，进入下一篇了，本彩笔爬走。" class="headerlink" title="这一篇博客就这样结束吧，进入下一篇了，本彩笔爬走。"></a>这一篇博客就这样结束吧，进入下一篇了，本彩笔爬走。</h2></li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
@@ -834,10 +201,9 @@
       <meta itemprop="name" content="MJD's Blog">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/05/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%881%EF%BC%89/" class="post-title-link" itemprop="url">数据结构（1）</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          数据结构（1）
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -880,7 +246,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="本篇博客讨论的是数据结构中的线性表"><a href="#本篇博客讨论的是数据结构中的线性表" class="headerlink" title="本篇博客讨论的是数据结构中的线性表"></a>本篇博客讨论的是数据结构中的线性表</h2><ul>
+        <h2 id="本篇博客讨论的是数据结构中的线性表"><a href="#本篇博客讨论的是数据结构中的线性表" class="headerlink" title="本篇博客讨论的是数据结构中的线性表"></a>本篇博客讨论的是数据结构中的线性表</h2><ul>
 <li><h1 id="线性表的定义"><a href="#线性表的定义" class="headerlink" title="线性表的定义"></a>线性表的定义</h1><ul>
 <li><h3 id="线性表是数据结构的一种，一个线性表指的是零到n个数据元素的有限序列，其中的元素都有一个确定的位置，数据元素之间是一对一的关系。线性与否的判别标准是逻辑层次上的，而非存储层次上的。"><a href="#线性表是数据结构的一种，一个线性表指的是零到n个数据元素的有限序列，其中的元素都有一个确定的位置，数据元素之间是一对一的关系。线性与否的判别标准是逻辑层次上的，而非存储层次上的。" class="headerlink" title="线性表是数据结构的一种，一个线性表指的是零到n个数据元素的有限序列，其中的元素都有一个确定的位置，数据元素之间是一对一的关系。线性与否的判别标准是逻辑层次上的，而非存储层次上的。"></a>线性表是数据结构的一种，一个线性表指的是零到n个数据元素的有限序列，其中的元素都有一个确定的位置，数据元素之间是一对一的关系。线性与否的判别标准是逻辑层次上的，而非存储层次上的。</h3></li>
 <li><h3 id="线性表具有下面几种结构特点："><a href="#线性表具有下面几种结构特点：" class="headerlink" title="线性表具有下面几种结构特点："></a>线性表具有下面几种结构特点：</h3><h3 id="1-均匀性：虽然不同数据表的数据元素可以是各种各样的，但对于同一线性表的各数据元素必定具有相同的数据类型和长度。"><a href="#1-均匀性：虽然不同数据表的数据元素可以是各种各样的，但对于同一线性表的各数据元素必定具有相同的数据类型和长度。" class="headerlink" title="1. 均匀性：虽然不同数据表的数据元素可以是各种各样的，但对于同一线性表的各数据元素必定具有相同的数据类型和长度。"></a>1. 均匀性：虽然不同数据表的数据元素可以是各种各样的，但对于同一线性表的各数据元素必定具有相同的数据类型和长度。</h3><h3 id="2-有序性：各数据元素在线性表中的位置只取决于它们的序号，数据元素之前的相对位置是线性的，即存在唯一的“第一个“和“最后一个”的数据元素，除了第一个和最后一个外，其它元素前面均只有一个数据元素-直接前驱-和后面均只有一个数据元素（直接后继）。"><a href="#2-有序性：各数据元素在线性表中的位置只取决于它们的序号，数据元素之前的相对位置是线性的，即存在唯一的“第一个“和“最后一个”的数据元素，除了第一个和最后一个外，其它元素前面均只有一个数据元素-直接前驱-和后面均只有一个数据元素（直接后继）。" class="headerlink" title="2. 有序性：各数据元素在线性表中的位置只取决于它们的序号，数据元素之前的相对位置是线性的，即存在唯一的“第一个“和“最后一个”的数据元素，除了第一个和最后一个外，其它元素前面均只有一个数据元素(直接前驱)和后面均只有一个数据元素（直接后继）。"></a>2. 有序性：各数据元素在线性表中的位置只取决于它们的序号，数据元素之前的相对位置是线性的，即存在唯一的“第一个“和“最后一个”的数据元素，除了第一个和最后一个外，其它元素前面均只有一个数据元素(直接前驱)和后面均只有一个数据元素（直接后继）。</h3></li>
@@ -921,221 +287,36 @@
 </li>
 </ul>
 
-      
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
+          <div class="post-tags">
+              <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag"># 数据结构</a>
+          </div>
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/30/HTML%E5%88%9D%E8%AF%86%EF%BC%881%EF%BC%89/">
+        
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Majsjdkcmdn">
-      <meta itemprop="description" content="一起加油吧">
-    </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="MJD's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/04/30/HTML%E5%88%9D%E8%AF%86%EF%BC%881%EF%BC%89/" class="post-title-link" itemprop="url">HTML初识（1）</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2023-04-30 21:02:34" itemprop="dateCreated datePublished" datetime="2023-04-30T21:02:34+08:00">2023-04-30</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-05-03 21:17:54" itemprop="dateModified" datetime="2023-05-03T21:17:54+08:00">2023-05-03</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/HTML/" itemprop="url" rel="index"><span itemprop="name">HTML</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/HTML/%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">基础</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>HTML，全称超文本标记语言。本来我不想学这个的，但是为了能看得懂爬虫内容，就稍微涉猎一下这方面前端的内容吧，学会之后就可以自己修改自己博客的前端样式了，想想都刺激。 </p>
-<ul>
-<li><h2 id="HTML元素"><a href="#HTML元素" class="headerlink" title="HTML元素"></a>HTML元素</h2><ul>
-<li><p>HTML 元素以开始标签起始</p>
-</li>
-<li><p>HTML 元素以结束标签终止</p>
-</li>
-<li><p>元素的内容是开始标签与结束标签之间的内容</p>
-</li>
-<li><p>某些 HTML 元素具有空内容（empty content）</p>
-</li>
-<li><p>空元素在开始标签中进行关闭（以开始标签的结束而结束）</p>
-</li>
-<li><p>大多数 HTML 元素可拥有属性</p>
-</li>
-<li><p>代码示例：  </p>
-<pre><code>  &lt;html&gt;
-  &lt;body&gt;
-  &lt;p&gt;这是一个段落&lt;/p&gt;
-  &lt;/body&gt;
-  &lt;/html&gt;  
-</code></pre>
-</li>
-<li><p>以上代码包含三个html元素，这三个元素均拥有两个标签标记元素的开始和结束。在语句<code>&lt;p&gt;这是一个段落&lt;/p&gt;</code>中<code>&lt;p&gt;</code>作为开始标签，<code>&lt;\p&gt;</code>作为结束标签，中间夹的部分即为该元素的内容。<strong>并非所有HTML元素都拥有结束标签</strong></p>
-</li>
-<li><p>以上代码为三个html元素的嵌套，一般html文档由多个嵌套的html元素组成</p>
-</li>
-</ul>
-</li>
-<li><h2 id="HTML空元素"><a href="#HTML空元素" class="headerlink" title="HTML空元素"></a>HTML空元素</h2><ul>
-<li>没有内容的 HTML 元素被称为空元素。空元素是在开始标签中关闭的。</li>
-<li><code>&lt;br&gt;</code> 就是没有关闭标签的空元素（<code>&lt;br&gt;</code> 标签定义换行）。</li>
-<li>在 XHTML、XML 以及未来版本的 HTML 中，所有元素都必须被关闭。</li>
-<li>在开始标签中添加斜杠，比如 <code>&lt;br /&gt;</code>，是关闭空元素的正确方法，HTML、XHTML 和 XML 都接受这种方式。</li>
-<li>初学还是能关就关，符合规范</li>
-</ul>
-</li>
-<li><h2 id="HTML大小写"><a href="#HTML大小写" class="headerlink" title="HTML大小写"></a>HTML大小写</h2><ul>
-<li>HTML大小写不敏感，但是建议还是用小写</li>
-</ul>
-</li>
-</ul>
-<h2 id="下一篇博客将介绍HTML元素的各种属性及其简单作用"><a href="#下一篇博客将介绍HTML元素的各种属性及其简单作用" class="headerlink" title="下一篇博客将介绍HTML元素的各种属性及其简单作用"></a>下一篇博客将介绍HTML元素的各种属性及其简单作用</h2>
-      
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2023/04/30/HTML%E5%88%9D%E8%AF%86%EF%BC%881%EF%BC%89/" rel="prev" title="HTML初识（1）">
+      <i class="fa fa-chevron-left"></i> HTML初识（1）
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2023/05/02/%EF%BC%88c%EF%BC%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%88%9D%E6%AD%A5%EF%BC%881%EF%BC%89/" rel="next" title="（c）数据结构初步（1）">
+      （c）数据结构初步（1） <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
       </footer>
+    
   </article>
   
   
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/29/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Majsjdkcmdn">
-      <meta itemprop="description" content="一起加油吧">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="MJD's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/04/29/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" class="post-title-link" itemprop="url">我的第一篇博客</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2023-04-29 20:22:40" itemprop="dateCreated datePublished" datetime="2023-04-29T20:22:40+08:00">2023-04-29</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-05-18 10:48:30" itemprop="dateModified" datetime="2023-05-18T10:48:30+08:00">2023-05-18</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%B0%8F-%E5%AE%9E-%E8%B7%B5/" itemprop="url" rel="index"><span itemprop="name">小 实 践</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%B0%8F-%E5%AE%9E-%E8%B7%B5/%E6%96%87%E7%AB%A0/" itemprop="url" rel="index"><span itemprop="name">文章</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>这是我的第一篇博客,高中的时候看到学校内有技术大佬买nas搭博客和共享网盘给全校人使用，还记得那是疫情时间，那个大佬跟神一样拯救了所有网课文件查找难的问题，哇塞偶像！我说我都上大学了，怎么就不能也搭一个，不说买nas搭网盘，就搭一个博客应该没什么难得吧，结果我一个小白连nodejs都用不明白，克隆下别人的库调配置都调了半天，期间还有什么npm突然失灵，下载路径完全乱了，好在重启之后就解决了（不是真就重启破万法呗）。好在现在这个博客算是有个博客的样子了，这第一篇文章就是例证。以后写代码和画画的过程中再看吧，说不定哪天看这博客不顺眼就直接改样式了，目前应该算博客1.0，嗯。  </p>
-<p>之前学jupyter notebook的时候也用过markdown，你还别说，真上手写博客之后就发现还真挺好用的，比HTML要好理解不少。（虽然说html入门也不难） </p>
-<p>这个域名暂且买了一年，希望我能每天更新，不咕咕，不咕咕，不咕咕！也希望没人攻击我这个域名。  </p>
-<p>这里就是我以后记录自己学习和想法的地方了，一切都是为了未来做准备，好好加油吧！</p>
-<h2 id="可恶，缩进居然不生效"><a href="#可恶，缩进居然不生效" class="headerlink" title="可恶，缩进居然不生效"></a><strong>可恶，缩进居然不生效</strong></h2>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-
   
 
 
@@ -1188,6 +369,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%AC%E7%AF%87%E5%8D%9A%E5%AE%A2%E8%AE%A8%E8%AE%BA%E7%9A%84%E6%98%AF%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%AD%E7%9A%84%E7%BA%BF%E6%80%A7%E8%A1%A8"><span class="nav-number">1.</span> <span class="nav-text">本篇博客讨论的是数据结构中的线性表</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E8%A1%A8%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="nav-number"></span> <span class="nav-text">线性表的定义</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E8%A1%A8%E6%98%AF%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%9A%84%E4%B8%80%E7%A7%8D%EF%BC%8C%E4%B8%80%E4%B8%AA%E7%BA%BF%E6%80%A7%E8%A1%A8%E6%8C%87%E7%9A%84%E6%98%AF%E9%9B%B6%E5%88%B0n%E4%B8%AA%E6%95%B0%E6%8D%AE%E5%85%83%E7%B4%A0%E7%9A%84%E6%9C%89%E9%99%90%E5%BA%8F%E5%88%97%EF%BC%8C%E5%85%B6%E4%B8%AD%E7%9A%84%E5%85%83%E7%B4%A0%E9%83%BD%E6%9C%89%E4%B8%80%E4%B8%AA%E7%A1%AE%E5%AE%9A%E7%9A%84%E4%BD%8D%E7%BD%AE%EF%BC%8C%E6%95%B0%E6%8D%AE%E5%85%83%E7%B4%A0%E4%B9%8B%E9%97%B4%E6%98%AF%E4%B8%80%E5%AF%B9%E4%B8%80%E7%9A%84%E5%85%B3%E7%B3%BB%E3%80%82%E7%BA%BF%E6%80%A7%E4%B8%8E%E5%90%A6%E7%9A%84%E5%88%A4%E5%88%AB%E6%A0%87%E5%87%86%E6%98%AF%E9%80%BB%E8%BE%91%E5%B1%82%E6%AC%A1%E4%B8%8A%E7%9A%84%EF%BC%8C%E8%80%8C%E9%9D%9E%E5%AD%98%E5%82%A8%E5%B1%82%E6%AC%A1%E4%B8%8A%E7%9A%84%E3%80%82"><span class="nav-number">0.1.</span> <span class="nav-text">线性表是数据结构的一种，一个线性表指的是零到n个数据元素的有限序列，其中的元素都有一个确定的位置，数据元素之间是一对一的关系。线性与否的判别标准是逻辑层次上的，而非存储层次上的。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E8%A1%A8%E5%85%B7%E6%9C%89%E4%B8%8B%E9%9D%A2%E5%87%A0%E7%A7%8D%E7%BB%93%E6%9E%84%E7%89%B9%E7%82%B9%EF%BC%9A"><span class="nav-number">0.2.</span> <span class="nav-text">线性表具有下面几种结构特点：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%9D%87%E5%8C%80%E6%80%A7%EF%BC%9A%E8%99%BD%E7%84%B6%E4%B8%8D%E5%90%8C%E6%95%B0%E6%8D%AE%E8%A1%A8%E7%9A%84%E6%95%B0%E6%8D%AE%E5%85%83%E7%B4%A0%E5%8F%AF%E4%BB%A5%E6%98%AF%E5%90%84%E7%A7%8D%E5%90%84%E6%A0%B7%E7%9A%84%EF%BC%8C%E4%BD%86%E5%AF%B9%E4%BA%8E%E5%90%8C%E4%B8%80%E7%BA%BF%E6%80%A7%E8%A1%A8%E7%9A%84%E5%90%84%E6%95%B0%E6%8D%AE%E5%85%83%E7%B4%A0%E5%BF%85%E5%AE%9A%E5%85%B7%E6%9C%89%E7%9B%B8%E5%90%8C%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%92%8C%E9%95%BF%E5%BA%A6%E3%80%82"><span class="nav-number">0.3.</span> <span class="nav-text">1. 均匀性：虽然不同数据表的数据元素可以是各种各样的，但对于同一线性表的各数据元素必定具有相同的数据类型和长度。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E6%9C%89%E5%BA%8F%E6%80%A7%EF%BC%9A%E5%90%84%E6%95%B0%E6%8D%AE%E5%85%83%E7%B4%A0%E5%9C%A8%E7%BA%BF%E6%80%A7%E8%A1%A8%E4%B8%AD%E7%9A%84%E4%BD%8D%E7%BD%AE%E5%8F%AA%E5%8F%96%E5%86%B3%E4%BA%8E%E5%AE%83%E4%BB%AC%E7%9A%84%E5%BA%8F%E5%8F%B7%EF%BC%8C%E6%95%B0%E6%8D%AE%E5%85%83%E7%B4%A0%E4%B9%8B%E5%89%8D%E7%9A%84%E7%9B%B8%E5%AF%B9%E4%BD%8D%E7%BD%AE%E6%98%AF%E7%BA%BF%E6%80%A7%E7%9A%84%EF%BC%8C%E5%8D%B3%E5%AD%98%E5%9C%A8%E5%94%AF%E4%B8%80%E7%9A%84%E2%80%9C%E7%AC%AC%E4%B8%80%E4%B8%AA%E2%80%9C%E5%92%8C%E2%80%9C%E6%9C%80%E5%90%8E%E4%B8%80%E4%B8%AA%E2%80%9D%E7%9A%84%E6%95%B0%E6%8D%AE%E5%85%83%E7%B4%A0%EF%BC%8C%E9%99%A4%E4%BA%86%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%92%8C%E6%9C%80%E5%90%8E%E4%B8%80%E4%B8%AA%E5%A4%96%EF%BC%8C%E5%85%B6%E5%AE%83%E5%85%83%E7%B4%A0%E5%89%8D%E9%9D%A2%E5%9D%87%E5%8F%AA%E6%9C%89%E4%B8%80%E4%B8%AA%E6%95%B0%E6%8D%AE%E5%85%83%E7%B4%A0-%E7%9B%B4%E6%8E%A5%E5%89%8D%E9%A9%B1-%E5%92%8C%E5%90%8E%E9%9D%A2%E5%9D%87%E5%8F%AA%E6%9C%89%E4%B8%80%E4%B8%AA%E6%95%B0%E6%8D%AE%E5%85%83%E7%B4%A0%EF%BC%88%E7%9B%B4%E6%8E%A5%E5%90%8E%E7%BB%A7%EF%BC%89%E3%80%82"><span class="nav-number">0.4.</span> <span class="nav-text">2. 有序性：各数据元素在线性表中的位置只取决于它们的序号，数据元素之前的相对位置是线性的，即存在唯一的“第一个“和“最后一个”的数据元素，除了第一个和最后一个外，其它元素前面均只有一个数据元素(直接前驱)和后面均只有一个数据元素（直接后继）。</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E8%A1%A8%E7%9A%84%E5%88%86%E7%B1%BB"><span class="nav-number"></span> <span class="nav-text">线性表的分类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E7%BB%84"><span class="nav-number">1.</span> <span class="nav-text">数组</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E7%BB%84%E6%98%AF%E6%9C%80%E5%9F%BA%E7%A1%80%E7%9A%84%E4%B8%80%E7%A7%8D%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%8C%E4%BB%96%E6%98%AF%E4%B8%80%E7%A7%8D%E7%BA%BF%E6%80%A7%E8%A1%A8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%8C%E7%94%A8%E4%B8%80%E7%BB%84%E8%BF%9E%E7%BB%AD%E7%9A%84%E5%86%85%E5%AD%98%E7%A9%BA%E9%97%B4%EF%BC%8C%E6%9D%A5%E5%AD%98%E5%82%A8%E4%B8%80%E7%BB%84%E5%85%B7%E6%9C%89%E7%9B%B8%E5%90%8C%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%95%B0%E6%8D%AE%E3%80%82%E6%95%B0%E7%BB%84%E6%98%AF%E7%94%A8%E8%BF%9E%E7%BB%AD%E5%86%85%E5%AD%98%E7%A9%BA%E9%97%B4%E5%AD%98%E5%82%A8%E7%9B%B8%E5%90%8C%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%85%83%E7%B4%A0%EF%BC%8C%E5%B0%B1%E6%98%AF%E5%9B%A0%E4%B8%BA%E6%9C%89%E8%BF%99%E4%B8%AA%E9%99%90%E5%88%B6%E6%9D%A1%E4%BB%B6%EF%BC%8C%E4%BD%BF%E5%BE%97%E6%95%B0%E7%BB%84%E6%8C%89%E7%85%A7%E4%B8%8B%E6%A0%87%E9%9A%8F%E6%9C%BA%E8%AE%BF%E9%97%AE-%E9%9A%8F%E6%9C%BA%E8%AE%BF%E9%97%AE%EF%BC%9A%E5%8F%AF%E4%BB%A5%E7%94%A8%E5%90%8C%E7%AD%89%E7%9A%84%E6%97%B6%E9%97%B4%E8%AE%BF%E9%97%AE%E5%88%B0%E4%B8%80%E7%BB%84%E6%95%B0%E6%8D%AE%E4%B8%AD%E7%9A%84%E4%BB%BB%E6%84%8F%E4%B8%80%E4%B8%AA%E5%85%83%E7%B4%A0-%E6%95%B0%E7%BB%84%E4%B8%AD%E6%95%B0%E6%8D%AE%E5%85%83%E7%B4%A0%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E8%BE%BE%E5%88%B0-O-1-%E7%BA%A7%E5%88%AB%E3%80%82%E5%BD%93%E7%84%B6%E8%BF%99%E6%A0%B7%E7%9A%84%E9%99%90%E5%88%B6%E4%B9%9F%E6%9C%89%E7%BC%BA%E7%82%B9%EF%BC%8C%E5%9C%A8%E5%A4%B4%E9%83%A8%E6%88%96%E8%80%85%E4%B8%AD%E9%97%B4%E8%BF%9B%E8%A1%8C%E6%95%B0%E6%8D%AE%E5%88%A0%E9%99%A4%E3%80%81%E6%8F%92%E5%85%A5%E6%93%8D%E4%BD%9C%E6%97%B6%EF%BC%8C%E4%B8%BA%E4%BA%86%E4%BF%9D%E8%AF%81%E8%BF%99%E4%B8%AA%E8%BF%9E%E7%BB%AD%E6%80%A7%EF%BC%8C%E9%9C%80%E8%A6%81%E5%AF%B9%E6%95%B0%E6%8D%AE%E8%BF%9B%E8%A1%8C%E5%A4%A7%E9%87%8F%E7%9A%84%E5%A4%8D%E5%88%B6%E8%BF%81%E7%A7%BB%E6%9D%A5%E4%BF%9D%E6%8C%81%E6%AD%A4%E7%89%B9%E6%80%A7%E3%80%82"><span class="nav-number">1.1.</span> <span class="nav-text">数组是最基础的一种数据结构，他是一种线性表数据结构，用一组连续的内存空间，来存储一组具有相同类型的数据。数组是用连续内存空间存储相同类型的元素，就是因为有这个限制条件，使得数组按照下标随机访问(随机访问：可以用同等的时间访问到一组数据中的任意一个元素)数组中数据元素时间复杂度达到 O(1) 级别。当然这样的限制也有缺点，在头部或者中间进行数据删除、插入操作时，为了保证这个连续性，需要对数据进行大量的复制迁移来保持此特性。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%99%E9%87%8C%E6%9C%89%E4%B8%80%E4%B8%AA%E6%B3%A8%E6%84%8F%E7%82%B9%EF%BC%8C%E6%88%91%E4%BB%AC%E6%98%AF%E9%80%9A%E8%BF%87%E6%95%B0%E7%BB%84%E4%B8%8B%E6%A0%87%E8%AE%BF%E9%97%AE%E6%95%B0%E6%8D%AE%E6%97%B6%EF%BC%8C%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E6%89%8D%E6%98%AF-O-1-%E5%BD%93%E6%88%91%E4%BB%AC%E9%80%9A%E8%BF%87%E6%95%B0%E6%8D%AE%E6%9F%A5%E6%89%BE%E5%85%83%E7%B4%A0%E6%97%B6%EF%BC%8C%E6%88%91%E4%BB%AC%E9%9C%80%E8%A6%81%E9%81%8D%E5%8E%86%E6%95%B0%E7%BB%84%E6%9F%A5%E6%89%BE%E5%AF%B9%E5%BA%94%E7%9A%84%E6%95%B0%E6%8D%AE%EF%BC%8C%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E6%98%AF-O-n-%E3%80%82"><span class="nav-number">1.2.</span> <span class="nav-text">这里有一个注意点，我们是通过数组下标访问数据时，时间复杂度才是 O(1),当我们通过数据查找元素时，我们需要遍历数组查找对应的数据，时间复杂度是 O(n)。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E7%BB%84%E6%98%AF%E4%B8%80%E4%B8%AA%E5%9B%BA%E5%AE%9A%E9%95%BF%E5%BA%A6%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%8C%E8%BF%99%E6%98%AF%E5%AE%83%E7%9A%84%E4%B8%80%E4%B8%AA%E5%B7%A8%E5%A4%A7%E5%BC%B1%E7%82%B9%EF%BC%8C%E5%8D%B3%E9%9C%80%E8%A6%81%E5%9C%A8%E5%AE%9A%E4%B9%89%E4%B8%AD%E5%A3%B0%E6%98%8E%E6%95%B0%E7%BB%84%E7%9A%84%E9%95%BF%E5%BA%A6%EF%BC%8C%E8%A3%85%E6%BB%A1%E5%90%8E%E5%B0%B1%E8%A3%85%E4%B8%8D%E8%BF%9B%E5%8E%BB%E4%BA%86%E3%80%82%E5%9C%A8%E9%AB%98%E7%BA%A7%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E4%B8%AD%EF%BC%8C%E5%BE%80%E5%BE%80%E9%83%BD%E4%BD%BF%E7%94%A8%E5%8A%A8%E6%80%81%E6%95%B0%E7%BB%84%E6%9D%A5%E8%A7%A3%E5%86%B3%E8%BF%99%E4%B8%AA%E9%97%AE%E9%A2%98%EF%BC%8C%E6%89%80%E8%B0%93%E5%8A%A8%E6%80%81%E6%95%B0%E7%BB%84%E5%B0%B1%E6%98%AF%E8%87%AA%E5%8A%A8%E4%BC%9A%E8%BF%9B%E8%A1%8C%E6%95%B0%E7%BB%84%E6%89%A9%E5%AE%B9%EF%BC%8C%E5%BD%93%E6%95%B0%E7%BB%84%E5%AE%B9%E9%87%8F%E8%BE%BE%E5%88%B0%E6%9F%90%E4%B8%AA%E4%B8%B4%E7%95%8C%E7%82%B9%E7%9A%84%E6%97%B6%E5%80%99%EF%BC%8C%E5%8A%A8%E6%80%81%E6%95%B0%E7%BB%84%E4%BC%9A%E5%BC%80%E8%BE%9F%E4%B8%80%E4%B8%AA%E6%9B%B4%E5%A4%A7%E7%9A%84%E6%95%B0%E7%BB%84%EF%BC%8C%E7%84%B6%E5%90%8E%E5%B0%86%E5%8E%9F%E6%9D%A5%E7%9A%84%E5%85%83%E7%B4%A0%E5%A4%8D%E5%88%B6%E8%BF%87%E5%8E%BB%E3%80%82%E5%8A%A8%E6%80%81%E6%95%B0%E7%BB%84%E5%9C%A8%E5%B8%AE%E4%BD%A0%E8%87%AA%E5%8A%A8%E6%89%A9%E5%AE%B9%E7%9A%84%E5%90%8C%E6%97%B6%EF%BC%8C%E4%B9%9F%E5%B8%A6%E6%9D%A5%E4%BA%86%E5%A4%8D%E5%88%B6%E5%85%83%E7%B4%A0%E7%9A%84%E4%BB%A3%E4%BB%B7%EF%BC%9A"><span class="nav-number">1.3.</span> <span class="nav-text">数组是一个固定长度的数据结构，这是它的一个巨大弱点，即需要在定义中声明数组的长度，装满后就装不进去了。在高级编程语言中，往往都使用动态数组来解决这个问题，所谓动态数组就是自动会进行数组扩容，当数组容量达到某个临界点的时候，动态数组会开辟一个更大的数组，然后将原来的元素复制过去。动态数组在帮你自动扩容的同时，也带来了复制元素的代价：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BD%93%E6%95%B0%E7%BB%84%E9%9C%80%E8%A6%81%E6%89%A9%E5%AE%B9%E6%97%B6%EF%BC%8C%E9%9C%80%E8%A6%81%E8%BF%9B%E8%A1%8C%E5%85%83%E7%B4%A0%E5%A4%8D%E5%88%B6%E3%80%82"><span class="nav-number">1.4.</span> <span class="nav-text">当数组需要扩容时，需要进行元素复制。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BD%93%E5%88%A0%E9%99%A4%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0%E6%97%B6%E4%B9%9F%E9%9C%80%E8%A6%81%E8%BF%9B%E8%A1%8C%E5%85%83%E7%B4%A0%E5%A4%8D%E5%88%B6%EF%BC%8C%E5%9B%A0%E4%B8%BA%E5%BD%93%E4%B8%80%E5%88%A0%E9%99%A4%E6%9F%90%E4%B8%80%E4%B8%AA%E5%85%83%E7%B4%A0%E5%90%8E%EF%BC%8C%E6%95%B0%E7%BB%84%E4%B8%AD%E9%97%B4%E5%B0%B1%E4%BC%9A%E6%9C%89%E4%B8%80%E4%B8%AA%E7%A9%BA%E4%BD%8D%E7%BD%AE%EF%BC%8C%E9%9C%80%E8%A6%81%E6%8A%8A%E5%90%8E%E9%9D%A2%E7%9A%84%E5%85%83%E7%B4%A0%E9%83%BD%E5%BE%80%E5%89%8D%E6%8C%AA%E4%B8%80%E6%A0%BC%E3%80%82"><span class="nav-number">1.5.</span> <span class="nav-text">当删除数组元素时也需要进行元素复制，因为当一删除某一个元素后，数组中间就会有一个空位置，需要把后面的元素都往前挪一格。</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%88"><span class="nav-number">2.</span> <span class="nav-text">栈</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%88%E6%98%AF%E4%B8%80%E7%A7%8D%E6%93%8D%E4%BD%9C%E5%8F%97%E9%99%90%E7%9A%84%E7%BA%BF%E6%80%A7%E8%A1%A8%EF%BC%8C%E5%85%B6%E6%98%AF%E4%B8%80%E7%A7%8D%E5%8F%AA%E5%85%81%E8%AE%B8%E5%9C%A8%E4%B8%80%E7%AB%AF%E8%BF%9B%E8%A1%8C%E6%8F%92%E5%85%A5%E6%88%96%E5%88%A0%E9%99%A4%E7%9A%84%E7%BA%BF%E6%80%A7%E8%A1%A8%EF%BC%8C%E4%B8%8B%E9%9D%A2%E6%98%AF%E4%B8%80%E4%BA%9B%E6%B6%89%E5%8F%8A%E6%A0%88%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="nav-number">2.1.</span> <span class="nav-text">栈是一种操作受限的线性表，其是一种只允许在一端进行插入或删除的线性表，下面是一些涉及栈的概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%88%E9%A1%B6%EF%BC%88Top%EF%BC%89%EF%BC%9A%E7%BA%BF%E6%80%A7%E8%A1%A8%E5%85%81%E8%AE%B8%E8%BF%9B%E8%A1%8C%E6%8F%92%E5%85%A5%E5%88%A0%E9%99%A4%E7%9A%84%E9%82%A3%E4%B8%80%E7%AB%AF%E3%80%82"><span class="nav-number">2.2.</span> <span class="nav-text">栈顶（Top）：线性表允许进行插入删除的那一端。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%88%E5%BA%95%EF%BC%88Bottom%EF%BC%89%EF%BC%9A%E5%9B%BA%E5%AE%9A%E7%9A%84%EF%BC%8C%E4%B8%8D%E5%85%81%E8%AE%B8%E8%BF%9B%E8%A1%8C%E6%8F%92%E5%85%A5%E5%92%8C%E5%88%A0%E9%99%A4%E7%9A%84%E5%8F%A6%E4%B8%80%E7%AB%AF%E3%80%82"><span class="nav-number">2.3.</span> <span class="nav-text">栈底（Bottom）：固定的，不允许进行插入和删除的另一端。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A9%BA%E6%A0%88%EF%BC%9A%E4%B8%8D%E5%90%AB%E4%BB%BB%E4%BD%95%E5%85%83%E7%B4%A0%E7%9A%84%E7%A9%BA%E8%A1%A8%E3%80%82"><span class="nav-number">2.4.</span> <span class="nav-text">空栈：不含任何元素的空表。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%88%E5%8F%88%E7%A7%B0%E4%B8%BA%E5%90%8E%E8%BF%9B%E5%85%88%E5%87%BA%EF%BC%88Last-In-First-Out%EF%BC%89%E7%9A%84%E7%BA%BF%E6%80%A7%E8%A1%A8%EF%BC%8C%E7%AE%80%E7%A7%B0LIFO%E7%BB%93%E6%9E%84"><span class="nav-number">2.5.</span> <span class="nav-text">栈又称为后进先出（Last In First Out）的线性表，简称LIFO结构</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%98%9F%E5%88%97"><span class="nav-number">3.</span> <span class="nav-text">队列</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%98%9F%E5%88%97%E6%98%AF%E4%B8%80%E7%A7%8D%E6%93%8D%E4%BD%9C%E5%8F%97%E9%99%90%E7%9A%84%E7%BA%BF%E6%80%A7%E8%A1%A8%EF%BC%8C%E5%85%B6%E6%98%AF%E5%8F%AA%E5%85%81%E8%AE%B8%E5%9C%A8%E4%B8%80%E7%AB%AF%E8%BF%9B%E8%A1%8C%E6%8F%92%E5%85%A5%E6%93%8D%E4%BD%9C%EF%BC%8C%E8%80%8C%E5%9C%A8%E5%8F%A6%E4%B8%80%E7%AB%AF%E8%BF%9B%E8%A1%8C%E5%88%A0%E9%99%A4%E6%93%8D%E4%BD%9C%E7%9A%84%E7%BA%BF%E6%80%A7%E8%A1%A8%EF%BC%8C%E4%B8%8B%E9%9D%A2%E6%98%AF%E4%B8%80%E4%BA%9B%E6%B6%89%E5%8F%8A%E9%98%9F%E5%88%97%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="nav-number">3.1.</span> <span class="nav-text">队列是一种操作受限的线性表，其是只允许在一端进行插入操作，而在另一端进行删除操作的线性表，下面是一些涉及队列的概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%98%9F%E5%A4%B4%EF%BC%88Front%EF%BC%89%EF%BC%9A%E5%85%81%E8%AE%B8%E5%88%A0%E9%99%A4%E7%9A%84%E4%B8%80%E7%AB%AF%EF%BC%8C%E5%8F%88%E7%A7%B0%E9%98%9F%E9%A6%96%E3%80%82"><span class="nav-number">3.2.</span> <span class="nav-text">队头（Front）：允许删除的一端，又称队首。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%98%9F%E5%B0%BE%EF%BC%88Rear%EF%BC%89%EF%BC%9A%E5%85%81%E8%AE%B8%E6%8F%92%E5%85%A5%E7%9A%84%E4%B8%80%E7%AB%AF%E3%80%82"><span class="nav-number">3.3.</span> <span class="nav-text">队尾（Rear）：允许插入的一端。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A9%BA%E9%98%9F%E5%88%97%EF%BC%9A%E4%B8%8D%E5%8C%85%E5%90%AB%E4%BB%BB%E4%BD%95%E5%85%83%E7%B4%A0%E7%9A%84%E7%A9%BA%E8%A1%A8%E3%80%82"><span class="nav-number">3.4.</span> <span class="nav-text">空队列：不包含任何元素的空表。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%98%9F%E5%88%97%E6%98%AF%E4%B8%80%E7%A7%8D%E5%85%88%E8%BF%9B%E5%85%88%E5%87%BA%EF%BC%88First-In-First-Out%EF%BC%89%E7%9A%84%E7%BA%BF%E6%80%A7%E8%A1%A8%EF%BC%8C%E7%AE%80%E7%A7%B0FIFO%E3%80%82%E5%85%81%E8%AE%B8%E6%8F%92%E5%85%A5%E7%9A%84%E4%B8%80%E7%AB%AF%E7%A7%B0%E4%B8%BA%E9%98%9F%E5%B0%BE%EF%BC%8C%E5%85%81%E8%AE%B8%E5%88%A0%E9%99%A4%E7%9A%84%E4%B8%80%E7%AB%AF%E7%A7%B0%E4%B8%BA%E9%98%9F%E5%A4%B4%E3%80%82"><span class="nav-number">3.5.</span> <span class="nav-text">队列是一种先进先出（First In First Out）的线性表，简称FIFO。允许插入的一端称为队尾，允许删除的一端称为队头。</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%93%BE%E8%A1%A8"><span class="nav-number">4.</span> <span class="nav-text">链表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E7%BB%84%E7%9A%84%E5%85%83%E7%B4%A0%E5%9C%B0%E5%9D%80%E6%98%AF%E5%BC%BA%E5%88%B6%E8%BF%9E%E7%BB%AD%E7%9A%84%EF%BC%8C%E4%BD%86%E6%98%AF%E9%93%BE%E8%A1%A8%E7%9A%84%E5%85%83%E7%B4%A0%E5%86%85%E5%AD%98%E5%9C%B0%E5%9D%80%E5%8F%AF%E4%BB%A5%E6%98%AF%E4%B8%8D%E8%BF%9E%E7%BB%AD%E7%9A%84-%EF%BC%8C%E5%AE%83%E9%80%9A%E8%BF%87%E5%9C%B0%E5%9D%80%E5%BC%95%E7%94%A8%E7%9A%84%E6%96%B9%E5%BC%8F%E6%8C%87%E5%90%91%E4%B8%8B%E4%B8%80%E4%B8%AA%E5%85%83%E7%B4%A0%E7%9A%84%E4%BD%8D%E7%BD%AE%EF%BC%8C%E6%89%80%E4%BB%A5%E9%93%BE%E8%A1%A8%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%9C%8B%E8%B5%B7%E6%9D%A5%E6%AF%94%E8%BE%83%E5%83%8F%E4%B8%80%E4%B8%AA%E4%B8%B2%E3%80%82"><span class="nav-number">4.1.</span> <span class="nav-text">数组的元素地址是强制连续的，但是链表的元素内存地址可以是不连续的 ，它通过地址引用的方式指向下一个元素的位置，所以链表的数据结构看起来比较像一个串。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E4%BA%8E%E5%8D%95%E9%93%BE%E8%A1%A8%E8%80%8C%E8%A8%80%EF%BC%8C%E5%AE%83%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%B3%A8%E5%AE%9A%E4%BA%86%E5%AE%83%E6%97%A0%E6%B3%95%E5%BF%AB%E9%80%9F%E7%9A%84%E8%AE%BF%E9%97%AE%E6%9F%90%E4%B8%AA%E5%85%83%E7%B4%A0%EF%BC%8C%E5%8F%AA%E8%83%BD%E4%BE%9D%E9%9D%A0%E9%81%8D%E5%8E%86%E7%9A%84%E6%96%B9%E5%BC%8F%E6%85%A2%E6%85%A2%E6%9F%A5%E6%89%BE%EF%BC%8C%E6%89%80%E4%BB%A5%E8%AF%B4%E9%93%BE%E8%A1%A8%E7%9A%84%E6%9F%A5%E8%AF%A2%E6%95%B0%E6%8D%AE%E6%98%AF%E6%AF%94%E8%BE%83%E6%85%A2%E7%9A%84%EF%BC%8C%E6%98%AFO-N-%E8%BF%99%E4%B8%AA%E7%BA%A7%E5%88%AB%EF%BC%8C%E4%BD%86%E6%98%AF%E5%AE%83%E5%9C%A8%E5%A4%B4%E8%8A%82%E7%82%B9%EF%BC%88%E7%AC%AC%E4%B8%80%E4%B8%AA%E8%8A%82%E7%82%B9%EF%BC%89%E8%BF%9B%E8%A1%8C%E6%8F%92%E5%85%A5%E5%92%8C%E5%88%A0%E9%99%A4%E6%AF%94%E8%BE%83%E5%BF%AB%EF%BC%8C%E5%8F%AA%E9%9C%80%E8%A6%81O-1-%E5%B0%B1%E5%8F%AF%E4%BB%A5%E4%BA%86%EF%BC%8C%E5%9B%A0%E4%B8%BA%E4%BD%A0%E5%8F%AA%E9%9C%80%E8%A6%81%E6%94%B9%E5%8F%98%E4%B8%80%E4%B8%8B%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%85%83%E7%B4%A0%E7%9A%84%E5%BC%95%E7%94%A8%E3%80%82"><span class="nav-number">4.2.</span> <span class="nav-text">对于单链表而言，它的数据结构注定了它无法快速的访问某个元素，只能依靠遍历的方式慢慢查找，所以说链表的查询数据是比较慢的，是O(N) 这个级别，但是它在头节点（第一个节点）进行插入和删除比较快，只需要O(1) 就可以了，因为你只需要改变一下第一个元素的引用。</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%99%84%E5%BD%95%EF%BC%9A%E5%A4%A7O%E8%A1%A8%E7%A4%BA%E6%B3%95%EF%BC%9A"><span class="nav-number"></span> <span class="nav-text">附录：大O表示法：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#O-1-%EF%BC%9A%E5%B8%B8%E6%95%B0%E7%BA%A7%E5%88%AB%EF%BC%8C%E6%97%A0%E8%AE%BA%E8%BE%93%E5%85%A5%E5%A4%9A%E5%A4%A7%EF%BC%8C%E5%AE%83%E6%89%A7%E8%A1%8C%E7%9A%84%E6%AD%A5%E6%95%B0%E9%83%BD%E6%98%AF%E6%81%92%E5%AE%9A%E7%9A%84%EF%BC%8C%E4%B8%8D%E4%BC%9A%E5%9B%A0%E4%B8%BA%E8%BE%93%E5%85%A5%E5%8F%98%E5%A4%A7%E8%80%8C%E5%8F%98%E5%A4%A7%EF%BC%8C%E5%93%88%E5%B8%8C%E8%A1%A8%E7%9A%84%E6%9F%A5%E6%89%BE%E5%B0%B1%E6%98%AF%E8%BF%99%E4%B8%AA%E7%BA%A7%E5%88%AB%E3%80%82"><span class="nav-number">0.1.</span> <span class="nav-text">O(1) ：常数级别，无论输入多大，它执行的步数都是恒定的，不会因为输入变大而变大，哈希表的查找就是这个级别。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#O-N-%EF%BC%9A%E7%BA%BF%E6%80%A7%E7%BA%A7%E5%88%AB%EF%BC%8C%E9%9A%8F%E7%9D%80%E8%BE%93%E5%85%A5%E5%8F%98%E5%A4%A7%E8%80%97%E8%B4%B9%E7%9A%84%E6%AD%A5%E6%95%B0%E4%B9%9F%E6%AD%A3%E5%90%91%E7%9B%B8%E5%85%B3%EF%BC%8C%E9%81%8D%E5%8E%86%E7%AE%97%E6%B3%95%E5%B0%B1%E6%98%AF%E8%BF%99%E4%B8%AA%E7%BA%A7%E5%88%AB%E3%80%82"><span class="nav-number">0.2.</span> <span class="nav-text">O(N) ：线性级别，随着输入变大耗费的步数也正向相关，遍历算法就是这个级别。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#O-logN-%EF%BC%9A%E5%AF%B9%E6%95%B0%E7%BA%A7%E5%88%AB%EF%BC%8C%E8%BE%93%E5%85%A5%E6%AF%8F%E5%8F%98%E5%A4%A7%E4%B8%80%E5%80%8D%EF%BC%8C%E8%80%97%E8%B4%B9%E6%AD%A5%E9%AA%A4%E5%88%99%E5%A2%9E%E5%8A%A01%EF%BC%8C%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95%E5%B1%9E%E4%BA%8E%E8%BF%99%E4%B8%AA%E7%BA%A7%E5%88%AB%E3%80%82"><span class="nav-number">0.3.</span> <span class="nav-text">O(logN) ：对数级别，输入每变大一倍，耗费步骤则增加1，二分查找算法属于这个级别。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#O-N%C2%B2-%EF%BC%9A%E5%B9%B3%E6%96%B9%E7%BA%A7%E5%88%AB%EF%BC%8C%E9%9A%8F%E7%9D%80%E8%BE%93%E5%85%A5%E7%9A%84%E5%8F%98%E5%A4%A7%E6%89%80%E8%80%97%E8%B4%B9%E7%9A%84%E6%AD%A5%E6%95%B0%E4%BC%9A%E6%88%90%E5%80%8D%E5%A2%9E%E5%8A%A0%EF%BC%8C%E4%B8%80%E8%88%AC%E5%BD%93%E4%BD%A0%E7%9A%84%E7%AE%97%E6%B3%95%E4%BD%BF%E7%94%A8%E5%8F%8C%E5%B1%82for%E5%BE%AA%E7%8E%AF%E5%B0%B1%E6%98%AF%E8%BF%99%E4%B8%AA%E7%BA%A7%E5%88%AB%EF%BC%8C%E6%AF%94%E5%A6%82%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F%E3%80%82"><span class="nav-number">0.4.</span> <span class="nav-text">O(N²) ：平方级别，随着输入的变大所耗费的步数会成倍增加，一般当你的算法使用双层for循环就是这个级别，比如冒泡排序。</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%99%84%E5%BD%95%EF%BC%9A%E6%9C%AC%E6%AC%A1%E7%BB%83%E4%B9%A0%EF%BC%9A"><span class="nav-number"></span> <span class="nav-text">附录：本次练习：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%A8%E4%B8%8D%E5%90%8C%E8%AF%AD%E8%A8%80%E5%AE%9E%E7%8E%B0%E5%9F%BA%E6%9C%AC%E7%9A%84%E7%BA%BF%E6%80%A7%E8%A1%A8%E7%BB%93%E6%9E%84%EF%BC%8C%E6%AF%94%E5%A6%82%E5%8A%A8%E6%80%81%E6%95%B0%E7%BB%84%EF%BC%8C%E5%8F%8C%E5%90%91%E9%93%BE%E8%A1%A8%E7%AD%89"><span class="nav-number">0.1.</span> <span class="nav-text">用不同语言实现基本的线性表结构，比如动态数组，双向链表等</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0%E5%8A%9E%E6%B3%95%E5%86%8D%E5%90%84%E8%AF%AD%E8%A8%80%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%88%9D%E6%AD%A5%EF%BC%881%EF%BC%89%E4%B8%AD"><span class="nav-number">0.2.</span> <span class="nav-text">实现办法再各语言数据结构初步（1）中</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
